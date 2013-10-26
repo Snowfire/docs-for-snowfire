@@ -1,7 +1,7 @@
 Feature snippet
 ===============
 
-Create a snippet with the following code:
+Create a snippet named "feature" and paste the following code:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
