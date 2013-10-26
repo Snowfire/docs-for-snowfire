@@ -1,35 +1,40 @@
 Intro snippet
 =============
 
-Create a snippet with the following code:
+Create a snippet named "intro" with the following code:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <snippet>
-    <name>Feature</name>
-    <html><![CDATA[
-        <div class="flexslider">
-            { com_imagecollection (
-                    id: '{{ component_id }}',
-                    description: 'Add image',
-                    htmlElement: 'ul',
-                    class: 'slides',
-                    width: '{{ column_width }}',
-                    height: '400',
-                    placeholderHeight:'200'
-                    crop: 'true',
-                    itemHtml: '
-                        <li>%image%</li>
-                    '
-            ) }
-        </div>
-		<div class="feature_intro">
-		    { com_wysiwyg(id:'{{ component_id }}', description:'Text') }
-		    <div class="call_to_action">{ com_link(id:'{{ component_id }}', description:'Button') }</div>
-		</div>
-	]]></html>
+    <name>Intro</name>
+    <html>
+        <![CDATA[
+
+            <div class="intro_top">
+                <div class="intro_icon">
+                    { com_image(
+                        id: '{{ component_id }}',
+                        description: 'Image',
+                        maxHeight: '40',
+                        maxWidth: '40',
+                        crop: 'true'
+                    )}
+                </div>
+                <div class="intro_heading">
+                    { com_singlerow(id:'{{ component_id }}', description:'Heading') }
+                </div>
+            </div>
+
+            <div class="intro_content">
+                { com_wysiwyg(id:'{{ component_id }}', description:'Text') }
+            </div>
+
+        ]]>
+    </html>
 </snippet>
 ```
+
+Add the following code the global CSS:
 
 ```css
 /*******************************************
