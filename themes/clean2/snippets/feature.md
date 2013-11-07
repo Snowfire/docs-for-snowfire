@@ -23,7 +23,7 @@ Create a snippet named "feature" and paste the following code:
                     '
             ) }
         </div>
-        <div class="feature_intro">
+        <div class="feature_intro cf">
             { com_wysiwyg(id:'{{ component_id }}', description:'Text') }
             <div class="call_to_action">{ com_link(id:'{{ component_id }}', description:'Button') }</div>
         </div>
