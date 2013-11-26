@@ -18,8 +18,8 @@ Parameters
 * linkable - boolean.
 * crop - boolean.
 * altAsLinkTitle - boolean.
-* linkClass - class on <a> tag. Deprecated, use a-class instead.
-* canHaveEmptyLink - By default the <a> tag is stripped out if no link was selected by the user.
+* linkClass - class on `<a>` tag. Deprecated, use parameter `a-class` instead.
+* canHaveEmptyLink - By default the `<a>` tag is stripped out if no link was selected by the user.
 * enableVideo - boolean.
 * autoLinkToFile - boolean. Will automatically link the image to the original image file. _Requires linkable:'true'_
 * placeholderHeight - Specific width/height for the place holder image
