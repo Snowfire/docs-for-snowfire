@@ -45,8 +45,6 @@ For formatting options, see `fnc_publishDate`.
 
 ### `fnc_publishDate`
 
-#### Code
-
 	{ fnc_publishDate ( format:'%Y-%m-%d' ) }
 
 #### Output
@@ -64,11 +62,15 @@ This is how you access files uploaded to the various directories via FTP.
 
 ### Images
 
+
 	{ var_images }
+
 
 Example usage:
 
-	<img src="{ var_images }/logo.jpg" alt="My Logo" />
+```html
+<img src="{ var_images }/logo.jpg" alt="My Logo" />
+```
 
 
 ### Javascripts
@@ -77,7 +79,9 @@ Example usage:
 
 Example usage:
 
-	<script type="text/javascript" src="{ var_javascripts }/script.js"></script>
+```html
+<script type="text/javascript" src="{ var_javascripts }/script.js"></script>
+```
 
 
 ### CSS
@@ -86,18 +90,20 @@ Example usage:
 
 Example usage:
 
-	<link rel="stylesheet" href="{ var_styles }/style.css" type="text/css" />
+```html
+<link rel="stylesheet" href="{ var_styles }/style.css" type="text/css" />
+```
 
 
 ### `fnc_resource`
-
-#### Code
 
 	{ fnc_resource ( file:'logotype.png', alt:'Logotype' ) }
 
 #### Output
 
-	<img src="/accounts/1234/images/logotype.png?t=2010-10-05-21-36-04" alt="Logotype" />
+```html
+<img src="/accounts/1234/images/logotype.png?t=2010-10-05-21-36-04" alt="Logotype" />
+```
 
 #### Parameters
 
@@ -154,10 +160,12 @@ Example:
 
 ### `fnc_hasTag`
 
-	<div class="
-		{ fnc_hasTag ( tags:'foo,bar', after:'-style' ) }
-	">
-	</div>
+```html
+<div class="
+	{ fnc_hasTag ( tags:'foo,bar', after:'-style' ) }
+">
+</div>
+```
 
 Adds a class named `foo-style` or `bar-style` if the current page is tagged with those tags.
 
