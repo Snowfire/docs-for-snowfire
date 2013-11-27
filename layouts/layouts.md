@@ -55,7 +55,7 @@ For formatting options, see `fnc_publishDate`.
 
 #### Parameters
 
-* `format` - Date format.
+* `format` - [Date format](dates.md).
 
 
 ## Paths
