@@ -51,7 +51,7 @@ Examples
 	maxHeight:      '260',
 	maxWidth:       '1920',
 	html: '
-		<div {{ img_parameters | html_decode }} style="background:url({{ src }})"></div>
+		<div {{ img_parameters | html_decode }} style="background-image:url({{ src }})"></div>
 	'
 ) }
 ```
