@@ -33,8 +33,25 @@ Variables available are `src`, `alt`, `link`, `a_parameters` and `img_parameters
 
 #### Default value
 
-```
+```html
 {% if link %}<a {{ a_parameters | html_decode }}>{% end_if %}
 <img {{ img_parameters | html_decode }} />
 {% if link %}</a>{% end_if %}
+```
+
+Examples
+--------
+
+### Use a `<div>` with a CSS background instead of an `img` tag
+
+```html
+{ com_image(
+	id:             '1',
+	description:    'Add image',
+	maxHeight:      '260',
+	maxWidth:       '1920',
+	html: '
+		<div {{ img_parameters | html_decode }} style="background:url({{ src }})"></div>
+	'
+) }
 ```
