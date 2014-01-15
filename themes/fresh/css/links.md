@@ -33,12 +33,14 @@ Change button design
 
 ```css
 /* Active */
+#clean input[type="submit"],
 .column.cta_button a, 
 .column.cta_button_synced a {
 	color: red !important;
 }
 
 /* Mouseover */
+#clean input[type='submit'],
 .column.cta_button a:hover, 
 .column.cta_button_synced a:hover {
 	color: green !important;
