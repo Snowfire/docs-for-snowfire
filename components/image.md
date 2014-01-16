@@ -3,7 +3,7 @@ Image
 
 ```xml
 { com_image ( 
-    id:          	'1', 
+    id:          	'{{ component_id }}', 
     description: 	'Image', 
     maxHeight:   	'300',
     linkable:    	'true'
@@ -41,6 +41,18 @@ Variables available are `src`, `alt`, `link`, `a_parameters` and `img_parameters
 
 Examples
 --------
+
+### Default settings
+
+```html
+{ com_image ( 
+	id:'{{ component_id }}', 
+	description:'image', 
+	maxWidth:'{{ column_width }}', 
+	linkable:'true' 
+) }
+```
+
 
 ### Use a `<div>` with a CSS background instead of an `img` tag
 
