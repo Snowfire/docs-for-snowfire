@@ -1,11 +1,27 @@
-Image collection
-================
+# Image collection
 
 Great to use for sliders or image galleries. 
 
 
-Slider example using Flexslider
--------------------------------
+## Parameters
+
+* itemHtml (required)
+* htmlElement
+* width
+* height
+* crop
+* placeholderHeight
+* autodetectWidth
+
+
+### `itemHtml`
+
+Variables:
+
+* `%image%` – HTML code for image with link if set.
+
+
+## Slider example using Flexslider
 
 ```html
 <div class="flexslider">
