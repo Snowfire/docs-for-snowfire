@@ -198,3 +198,10 @@ Generates the following, if tag `foo` is not set.
 #### Wildcards
 
 It is possible to write dynamic tag selectors, using wildcards. To match the tags `color-blue` and `color-red` you can either write `tags:'color-blue, color-red'`, or with wildcards `tags:'color-*'`.
+
+
+## Partials
+
+	{{ partial: file.tpl }}
+
+Loads a file from `studio/partials/`.
