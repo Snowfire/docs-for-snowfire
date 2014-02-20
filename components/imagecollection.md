@@ -9,10 +9,9 @@ Great to use for sliders or image galleries.
 * htmlElement
 * width
 * height
-* crop
 * placeholderHeight
-* autodetectWidth
-
+* aspectRatio - Lock aspect ratio.
+* linkToImage - Automatically link to the source image file.
 
 ### `itemHtml`
 
