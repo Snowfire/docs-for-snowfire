@@ -205,3 +205,14 @@ It is possible to write dynamic tag selectors, using wildcards. To match the tag
 	{{ partial: file.tpl }}
 
 Loads a file from `studio/partials/`.
+
+
+## Edit mode
+
+	{ fnc_editMode ( active:'edit_mode' ) }
+
+In edit mode (Snowfire), this will output
+
+	edit_mode
+
+otherwise nothing.
