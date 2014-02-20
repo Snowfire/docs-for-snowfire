@@ -44,4 +44,10 @@ Propterties on a page / collection of pages:
 
 #### tagToUrl
 
+Example:
+
+	{% for page.tags as tag %}
+		<a href="{{ tag | tagToUrl }}">{{ tag }}
+	{% end_for %}
+
 #### monthToNumeric
