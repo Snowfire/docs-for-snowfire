@@ -1,44 +1,47 @@
-Liquid
-======
+# Liquid
+
+This is for version 2. [Version 1](legacy/liquid1.md)
 
 ```xml
-{ com_liquid ( id:'1', description:'Enter text', code:'' ) }
+{ com_liquid2 ( id:'1', description:'Enter text', code:'' ) }
 ```
 
+## Parameters
 
-List all tags
--------------
+* `code` (text)
+* `selectablePage` (boolean)
 
+## `code`
 
-```html
-{ com_liquid ( id:'1', description:'Groups', code:'
-	{% if page.children.tags != empty %}
-		{% for tag in page.children.tags exclude:keys.tagsFilter %}
-			<li><a href="{{ tag | tagToUrl:page }}">{{ tag }}</a></li>
-		{% endfor %}
-	{% endif %}
-' ) }
-```
+### Variables
 
+* `page` - Current page.
+* `selectedPage` - Selected page.
+* `keys` - Contains `tagsFilter`.
 
-Create a list of year/months for blog posts
--------------------------------------------
+### Page
 
+Propterties on a page / collection of pages:
 
-```html
-{ com_liquid ( id:'1', description:'Archive', code:'
-	<ul>
-		{% grouped year in selectedPage.children by:"publish date" groups:"%Y|%B"  %}
-			<li>
-				<h4>{{ year }}</h4>
+* `children`
+* `rootPath`
+* `root`
+* `tags`
+* `name`
+* `id`
+* `url`
+* `publishDate`
+* `components`
+* `count`
+* `older`
+* `newer`
+* `previous`
+* `next`
+* `previousSibling`
+* `keys`
 
-				<ul>
-					{% for month in year %}
-						<li><a href="blog/date:{{ year }}-{{ month | monthToNumeric }}">{{ month | capitalize }}</a></li>
-					{% endfor %}
-				</ul>
-			</li>
-		{% endgrouped %}
-	</ul>
-' ) }
-```
+### Liquid filters
+
+#### tagToUrl
+
+#### monthToNumeric
