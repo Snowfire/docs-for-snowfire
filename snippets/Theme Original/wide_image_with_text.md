@@ -36,10 +36,10 @@ The default code for the wide image with text snippet
                 description: 'Image',
                 maxWidth: '1920',
                 minWidth: '1920',
-                maxHeight: '615',
-                minHeight: '615',
+                maxHeight: '820',
+                minHeight: '820',
                 html: '
-                    <div class="wide_image">
+                    <div class="my_wide_image">
                         <div {{ img_parameters | html_decode }} style="height:410px;background-image:url({{ src }})" data-stellar-background-ratio="0.5">
                             <div class="overlay"></div>
                         </div>
@@ -92,6 +92,12 @@ And add the following CSS code to the global CSS:
 .snippet_area_main > .my_wide_image_with_text:first-child {
   margin-top: -37px;
 }
+
+.column.my_wide_image_with_text div {
+	background-position: center top;
+	background-attachment: fixed;
+}
+
 
 
 ```
