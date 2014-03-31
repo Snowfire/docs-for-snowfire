@@ -1,6 +1,7 @@
 The default code for the wide image with text snippet
 =====================================================
 
+[More info about this snippet](https://github.com/Snowfire/docs/blob/master/snippets/Theme%20Original/wide_image.md)
 
 
 ```xml
