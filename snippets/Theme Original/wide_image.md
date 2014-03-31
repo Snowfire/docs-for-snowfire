@@ -45,7 +45,6 @@ And add the following CSS code to the global CSS:
 	padding: 0;
 }
 
-// Column
 .column.my_wide_image div {
 	background-position: center top;
 	background-attachment: fixed;
