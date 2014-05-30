@@ -51,3 +51,31 @@ Example:
 	{% end_for %}
 
 #### monthToNumeric
+
+
+#### html
+
+Runs a `html_entity_decode()` on the value, useful when working with com_image and the html parameter
+
+Example:
+```javascript
+<div>
+	{ com_liquid2 (
+		id:'1', 
+		description:'Next article', 
+		code:'
+			{% if page.next %}
+				{ page.next.keys.main_image | html }}
+			{% end_if %}
+		')
+	}
+</div>
+```
+
+#### stringToDateFormat
+
+Converts a date string to a specific format (see http://se2.php.net/strftime)
+
+```javascript
+{{ page.next.publishDate | stringToDateFormat:"%B %e, %Y" }}
+```
