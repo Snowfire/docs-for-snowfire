@@ -65,21 +65,27 @@ And add the following CSS code to the global CSS:
   padding: 0;
 }
 
+.column.my_wide_image_with_text {
+  position: relative;
+}
+
 .column.my_wide_image_with_text .content {
   position: absolute;
   width: 100%;
+  z-index: 100;
+  pointer-events: none;
 }
 
 .column.my_wide_image_with_text .content .intro {
   text-align: center;
-  padding: 5em 0;
+  padding: 130px 0;
 }
 
 .column.my_wide_image_with_text .content .intro h1 {
   font-size: 32px;
-  color: #fff;
   font-weight: normal;
   margin: 0;
+  pointer-events: auto;
 }
 
 .column.my_wide_image_with_text .content .intro p {
@@ -87,17 +93,34 @@ And add the following CSS code to the global CSS:
   font-size: 16px;
   opacity: 0.75;
   font-weight: 400;
+  pointer-events: auto;
+}
+
+.column.my_wide_image_with_text .content .intro p a {
+  color: #fff;
+  border: 0;
+  text-decoration: underline;
+}
+
+.column.my_wide_image_with_text .content .intro a {
+  pointer-events: auto;
+}
+
+.column.my_wide_image_with_text .overlay {
+  background: red;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  opacity: 0.7;
 }
 
 .snippet_area_main > .my_wide_image_with_text:first-child {
   margin-top: -37px;
 }
 
-.column.my_wide_image_with_text div {
-	background-position: center top;
-	background-attachment: fixed;
+.snippet_area > .columns.my_wide_image_with_text {
+  overflow: visible;
 }
-
 
 
 ```
