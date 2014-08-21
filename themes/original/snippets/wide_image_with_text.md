@@ -114,6 +114,10 @@ And add the following CSS code to the global CSS:
   opacity: 0.7;
 }
 
+.column.my_wide_image_with_text div {
+    background-position: 50% 50%;
+}
+
 .snippet_area_main > .my_wide_image_with_text:first-child {
   margin-top: -37px;
 }
