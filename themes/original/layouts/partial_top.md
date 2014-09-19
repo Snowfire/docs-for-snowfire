@@ -41,4 +41,17 @@ This can be replace by the following code if you want to modify it:
 
 
 </header>
+<script>
+	(function () {
+		var o, rgb, $pageTop;
+
+		$pageTop = $('#page_top');
+		rgb = $pageTop.css('background-color').match(/rgb\(([0-9]+), *([0-9]+), *([0-9]+)\)/);
+
+		// http://stackoverflow.com/a/11868159/138023
+		o = Math.round(((parseInt(rgb[1]) * 299) + (parseInt(rgb[2]) * 587) + (parseInt(rgb[3]) * 114)) / 1000);
+
+		$pageTop.addClass(o > 125 ? 'light' : 'dark');
+	}());
+</script>
 ```
