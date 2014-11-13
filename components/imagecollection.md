@@ -10,14 +10,19 @@ Great to use for sliders or image galleries.
 * width
 * height
 * placeholderHeight
-* aspectRatio - Lock aspect ratio.
-* linkToImage - Automatically link to the source image file.
+* aspectRatio (float) - Lock aspect ratio.
+* linkToImage (boolean) - Automatically link to the source image file.
 
-### `itemHtml`
+### itemHtml
 
 Variables:
 
 * `%image%` – HTML code for image with link if set.
+
+### aspectRatio
+
+With aspect ratio set, image size is calculated by `width × width / aspect ratio`.  
+An aspect ratio of `2` is equal to 2:1 proportion.
 
 
 ## Slider example using Flexslider
