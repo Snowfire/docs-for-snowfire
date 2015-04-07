@@ -46,9 +46,18 @@ Propterties on a page / collection of pages:
 
 Example:
 
-	{% for page.tags as tag %}
-		<a href="{{ tag | tagToUrl }}">{{ tag }}</a>
-	{% end_for %}
+```javascript
+{ com_liquid2 (
+	id:'1', 
+	description:'Tags', 
+	code:'
+	    	{% for page.tags as tag %}
+    			<a href="{{ tag | tagToUrl:page }}">{{ tag }}</a>
+    		{% end_for %}
+	')
+}
+```
+
 
 #### monthToNumeric
 
