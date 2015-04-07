@@ -88,3 +88,41 @@ Converts a date string to a specific format (see http://se2.php.net/strftime)
 ```javascript
 {{ page.next.publishDate | stringToDateFormat:"%B %e, %Y" }}
 ```
+
+
+### Examples
+
+
+#### Show all tags on the main blog layout
+
+```javascript
+{ com_liquid2 (
+	id:'1', 
+	description: 'Tags', 
+	selectablePage:'false', 
+	code:'
+
+		{% if keys.tagsFilter != empty %}
+			<h1>Current tag: {{ keys.tagsFilter | join:"," | capitalize }}</h1>
+		{% end_if %}
+		
+		{% if page.children.tags != empty %}
+			<div>
+			
+				{% if keys.tagsFilter != empty %}
+					<div>
+						<a href="{{ "" | tagToUrl:page }}">Show all posts</a>
+					</div>
+				{% end_if %}
+			
+				<ul>
+					{% for page.children.tags as tag %}
+						<li>
+							<a href="{{ tag | tagToUrl:page }}">{{ tag }}</a>
+						</li>
+					{% end_for %}
+				</ul>
+			</div>
+		{% end_if %}
+' ) }
+```
