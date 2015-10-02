@@ -42,3 +42,23 @@ Automatically set width by parent element.
 
 * `max` – Use width and height as max size
 * `min` – Use width and height as min size
+
+
+## Examples
+
+### Use a `<div>` with a CSS background instead of an `img` tag
+
+```
+{ com_image2(
+	id: '102',
+	description: 'Image',
+	width: '1920',
+	height: '500',
+	description:'image',
+	autoWidth:'true',
+	dimensions:'min'
+	key: 'image',
+	html: '
+		<div {{ attributes_html | html_decode }} style="background-image:url({{ src }})"></div>
+	'
+) }
