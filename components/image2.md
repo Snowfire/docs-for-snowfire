@@ -21,6 +21,7 @@ Parameters
 * placeholderWidth
 * linkable (boolean)
 * resizable (boolean)
+* autoLinkToFile (boolean)
 
 
 ### html
