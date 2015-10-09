@@ -33,4 +33,16 @@ If you want to hide the default `one_column`, add the following code:
 </container>
 ```
 
+### Theme styles
 
+If you are using a theme which has different styles, you can choose to only show a layout for a specific style like this:
+
+```xml
+<!-- Only for evolve -->
+<container styles="evolve">
+  <id>my_layout</id>
+  <name>My Layout</name>
+</container>
+```
+
+This will only show my layout if you are using Inspire with the Evolve style. The styles attribute allowed multiple styles if you comma separate them. `evolve,movement`
