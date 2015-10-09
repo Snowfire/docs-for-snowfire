@@ -63,3 +63,24 @@ Automatically set width by parent element.
 		<div {{ attributes_html | html_decode }} style="background-image:url({{ src }})"></div>
 	'
 ) }
+```
+
+### Usage on a blog summary page
+
+If you have defined a key named `image` on your blog posts image2 component, this is how you show it in `com_keys`. Please note that you'll have to apply CSS classes to make sure your image div with the background has the size you want.
+
+
+```html
+{ com_keys (
+	id:'100',
+	description:'Blog posts',
+	html:'
+		<article class="posts">
+			<div class="image">
+				<div style="background-image:url({{ keys.image | metaToImage }})"></div>
+			</div>
+			<a href="{{ page.url }}">{{ keys.title }}</a>
+		</article>
+	'
+) }
+```
