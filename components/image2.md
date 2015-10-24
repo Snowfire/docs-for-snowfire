@@ -5,7 +5,8 @@ Image2
 { com_image2 (
   id:'{{ component_id }}', 
   description:'image', 
-  autoWidth:'true', 
+  width:'500',
+  height:'500',
   dimensions:'max'
 ) }
 ```
@@ -19,6 +20,7 @@ Parameters
 * autoWidth (boolean)
 * dimensions
 * placeholderWidth
+* crop (boolean) - Set `resizable` to `false` when using this parameter
 * linkable (boolean)
 * resizable (boolean)
 * autoLinkToFile (boolean)
@@ -62,6 +64,22 @@ Automatically set width by parent element.
 	html: '
 		<div {{ attributes_html | html_decode }} style="background-image:url({{ src }})"></div>
 	'
+) }
+```
+
+### Crop image
+
+This is great if you want to have multiple square images and maintain the aspect ratio between the images. This will force a larger image to be resized and cropped automatically. The user can change the crop, but it always maintains its aspect ratio (300x300, 1:1) in this example.
+
+```
+{ com_image2 (
+	id: '{{ component_id }}', 
+	description: 'image',  
+	width: '300',
+	height: '300',
+	dimensions: 'max',
+	crop: 'true',
+	resizable: 'false'
 ) }
 ```
 
