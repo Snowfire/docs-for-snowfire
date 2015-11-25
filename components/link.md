@@ -29,5 +29,5 @@ Want to have a clickable h2 element?
 This will output the following HTML:
 
 ```html
-<h2><a href="[user_chosen_link]" ckass="button">User input</a></h2>
+<h2><a href="[user_chosen_link]" class="button">User input</a></h2>
 ```
