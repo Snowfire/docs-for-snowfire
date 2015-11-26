@@ -1,7 +1,7 @@
-#Partial: top
+# Partial: top
 
 
-### HTML
+#### `top.tpl`
 
 ```html
 <script>

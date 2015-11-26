@@ -1,7 +1,7 @@
 #Partial: footer
 
 
-### HTML
+#### `footer.tpl`
 
 ```html
 <footer>

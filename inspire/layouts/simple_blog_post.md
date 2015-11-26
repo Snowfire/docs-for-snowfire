@@ -1,9 +1,9 @@
-#Simple blog post
+# Simple blog post
 
-###simple_blog_post.tpl
+#### `simple_blog_post.tpl`
 
 ```html
-<div class="wrapper" class="{ fnc_designstudio ( part:'header.style' ) }">
+<div class="wrappe	r" class="{ fnc_designstudio ( part:'header.style' ) }">
 
     {{ partial: top.tpl }}
 
@@ -42,7 +42,8 @@
 </div>
 ```
 
-###simple_blog_post.xml
+
+#### `simple_blog_post.xml`
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

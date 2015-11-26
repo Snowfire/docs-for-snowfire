@@ -1,6 +1,6 @@
-#Blog
+# Blog
 
-###blog.tpl
+#### `blog.tpl`
 
 ```html
 <div class="wrapper" class="{ fnc_designstudio ( part:'header.style' ) }">
@@ -75,7 +75,7 @@
 
 ```
 
-###blog.xml
+### `blog.xml`
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
