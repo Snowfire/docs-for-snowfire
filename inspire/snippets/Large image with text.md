@@ -47,10 +47,9 @@
 
 ```
 
-When use in layout, replace `{{ component_id_0 }}` with a static number. 
-
 
 ### Javascript
+This sets the image height to 70% of window height if the device height is larger than 800px. 
 
 ```javascript
 $(function(){
