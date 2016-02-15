@@ -8,6 +8,7 @@ Image2
   width:'500',
   height:'500',
   crop: 'true',
+  resizable: 'false',
   dimensions:'max'
 ) }
 ```
