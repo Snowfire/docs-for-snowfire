@@ -10,6 +10,7 @@ This is for version 2. [Version 1](legacy/liquid1.md)
 
 * `code` (text)
 * `selectablePage` (boolean)
+* `siblingTags` (boolean)
 
 ## `code`
 
@@ -17,6 +18,7 @@ This is for version 2. [Version 1](legacy/liquid1.md)
 
 * `page` - Current page.
 * `selectedPage` - Selected page.
+* `siblingTags` - Array of tags for all sibling (i.e other blog posts).
 * `keys` - Contains `tagsFilter`.
 
 ### Page
@@ -46,7 +48,7 @@ Propterties on a page / collection of pages:
 
 Example:
 
-```javascript
+```
 { com_liquid2 (
 	id:'1', 
 	description:'Tags', 
@@ -67,7 +69,7 @@ Example:
 Runs a `html_entity_decode()` on the value, useful when working with com_image and the html parameter
 
 Example:
-```javascript
+```
 <div>
 	{ com_liquid2 (
 		id:'1', 
@@ -85,7 +87,7 @@ Example:
 
 Converts a date string to a specific format (see http://se2.php.net/strftime)
 
-```javascript
+```
 {{ page.next.publishDate | stringToDateFormat:"%B %e, %Y" }}
 ```
 
@@ -95,7 +97,7 @@ Converts a date string to a specific format (see http://se2.php.net/strftime)
 
 #### Show all tags on the main blog layout
 
-```javascript
+```
 { com_liquid2 (
 	id:'1', 
 	description: 'Tags', 
@@ -126,3 +128,21 @@ Converts a date string to a specific format (see http://se2.php.net/strftime)
 		{% end_if %}
 ' ) }
 ```
+
+#### Show all tags on the blog on a specific blog post
+
+```
+{ com_liquid2 (
+    id:'1', 
+    description: 'Tags', 
+    selectablePage: 'false', 
+    siblingTags: 'true',
+    code:'
+	{% for siblingTags as tag %}
+		<li>
+    			<a href="{{ tag | tagToUrl:page }}">{{ tag }}</a>
+		</li>
+	{% end_for %}
+') }
+```
+
