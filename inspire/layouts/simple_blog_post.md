@@ -3,7 +3,7 @@
 #### `simple_blog_post.tpl`
 
 ```html
-<div class="wrappe	r" class="{ fnc_designstudio ( part:'header.style' ) }">
+<div class="wrapper" class="{ fnc_designstudio ( part:'header.style' ) }">
 
     {{ partial: top.tpl }}
 
