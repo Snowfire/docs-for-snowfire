@@ -3,13 +3,13 @@ Image2
 
 ```xml
 { com_image2 (
-  id:'{{ component_id }}', 
-  description:'image', 
-  width:'500',
-  height:'500',
+  id: '{{ component_id }}', 
+  description: 'image', 
+  width: '500',
+  height: '500',
   crop: 'true',
   resizable: 'false',
-  dimensions:'max'
+  dimensions:'min-max'
 ) }
 ```
 
@@ -27,15 +27,14 @@ Parameters
 * resizable (boolean)
 * autoLinkToFile (boolean)
 
-
 ### html
 
-Uses a Snowfire flavor of the Liquid template language.
+See how to use this in the examples below. Variables available are:
 
-Variables available are: 
 * src
 * attributes_html – e.g. `alt="" class="classes"`
 * alt
+* link
 
 
 ### autoWidth
@@ -45,8 +44,9 @@ Automatically set width by parent element.
 
 ### dimensions
 
-* `max` – Use width and height as max size
-* `min` – Use width and height as min size
+* `min-max` – Use width and height as min size, resizes larger images to fit in the width height you have defined. _(Recommended)_
+* `max` – Use width and height as max size.
+* `min` – Use width and height as min size.
 
 
 ## Examples
@@ -61,10 +61,12 @@ Automatically set width by parent element.
 	height: '500',
 	description:'image',
 	autoWidth:'true',
-	dimensions:'min'
+	dimensions:'min-max'
 	key: 'image',
 	html: '
-		<div {{ attributes_html | html_decode }} style="background-image:url({{ src }})"></div>
+		{% if link %}<a href="{{ link }}">{% end_if %}
+			<div {{ attributes_html | html_decode }} style="background-image:url({{ src }})"></div>
+		{% if link %}</a>{% end_if %}
 	'
 ) }
 ```
@@ -79,7 +81,7 @@ This is great if you want to have multiple square images and maintain the aspect
 	description: 'image',  
 	width: '300',
 	height: '300',
-	dimensions: 'max',
+	dimensions: 'min-max',
 	crop: 'true',
 	resizable: 'false'
 ) }
