@@ -95,39 +95,31 @@ Converts a date string to a specific format (see http://se2.php.net/strftime)
 ### Examples
 
 
-#### Show all tags on the main blog layout
+#### Show all tags on the main blog layout with active `<li>` class
 
 ```
-{ com_liquid2 (
-	id:'1', 
-	description: 'Tags', 
-	selectablePage:'false', 
-	code:'
+{ com_liquid ( id:'1', description:'Tags', code:'
 
-		{% if keys.tagsFilter != empty %}
-			<h1>Current tag: {{ keys.tagsFilter | join:"," | capitalize }}</h1>
-		{% end_if %}
-		
-		{% if page.children.tags != empty %}
-			<div>
-			
-				{% if keys.tagsFilter != empty %}
-					<div>
-						<a href="{{ "" | tagToUrl:page }}">Show all posts</a>
-					</div>
-				{% end_if %}
-			
-				<ul>
-					{% for page.children.tags as tag %}
-						<li>
-							<a href="{{ tag | tagToUrl:page }}">{{ tag }}</a>
-						</li>
-					{% end_for %}
-				</ul>
-			</div>
-		{% end_if %}
+	{% if keys.tagsFilter != empty %}
+		<h1>Current tag: {{ keys.tagsFilter | join:"," | capitalize }}</h1>
+	{% end_if %}
+
+    {% if page.children.tags != empty %}
+        {% for tag in page.children.tags %}
+            <li
+                {% for activeTag in keys.tagsFilter %}
+                    {% if activeTag == tag %}
+                        class="active"
+                    {% endif %}
+                {% endfor %}
+            >
+                <a href="{{ tag | tagToUrl:page }}">{{ tag }}</a>
+            </li>
+        {% endfor %}
+    {% endif %}
 ' ) }
 ```
+
 
 #### Show all tags on the blog on a specific blog post
 
