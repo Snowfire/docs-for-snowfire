@@ -5,7 +5,7 @@
 ### Condition if inside or outside of Live Edit
 
 ```javascript
-if (typeof isInEditMode != 'undefined') {
+if (typeof isInEditMode == 'undefined') {
     alert('I won\'t popup inside edit mode');
 }
 ```
