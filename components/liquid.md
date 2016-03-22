@@ -102,7 +102,7 @@ Converts a date string to a specific format (see http://se2.php.net/strftime)
 
 	{% if keys.tagsFilter != empty %}
 		<h1>Current tag: {{ keys.tagsFilter | join:"," | capitalize }}</h1>
-	{% end_if %}
+	{% endif %}
 
     {% if page.children.tags != empty %}
         {% for tag in page.children.tags %}
