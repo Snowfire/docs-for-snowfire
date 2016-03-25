@@ -1,7 +1,7 @@
 # Snippets
 
 
-- All snippets in the `examples` folder are included by default in Snowfire
+- All snippets in the `bundled` folder are included by default in Snowfire
 
 - You can replace existing default snippets by creating a new one with the same name. Then copy/paste the from the code here.
 
