@@ -14,7 +14,9 @@ This example uses a function called `tags` and sends `limit` and `pageLimit` as 
 
 ## List of functions
 
-### tags
+### childrenTags()
+
+Will get the current pages sub pages tags. I.e. if you are on the main blog layout and want to get all tags from posts.
 
 Parameters:
 * limit &ndash; (numeric, required)
@@ -22,7 +24,7 @@ Parameters:
 
 Returns an array of tags:
 
-```
+```json
 [
 	{
 		"name": "Apple",
@@ -45,3 +47,11 @@ Example access:
 <!-- Display the first tag name -->
 [[ tags[0].name ]]
 ```
+
+---
+
+### siblingTags()
+
+If you are on the single blog post layout and want to get all tags on the blog. This function works exactly like `childrenTags()` with the same parameters, same return etc.
+
+---
