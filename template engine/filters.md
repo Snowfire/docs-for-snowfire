@@ -27,4 +27,21 @@ Example
 
 ---
 
+### onlyInLiveEdit
+
+If you want to output a variable only when the user is in edit mode. 
+
+Example:
+
+```<p>[[ "Hello World" | onlyInLiveEdit ]]</p>```
+
+Will be rendered as this in edit mode:
+
+```<p>[Hello World]</p>```
+
+And like this for visitors
+
+```<p> </p>```
+
+The [ ] indicates for Snowfire users that this text won't be visible for visitors.
 
