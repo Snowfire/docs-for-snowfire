@@ -13,14 +13,15 @@
                 <div class="col-md-9">
                     
                     <div class="row">
+
                         { com_keys (
                             id:'197',
                             description:'Blog posts',
-                            class:'',
+                            class:'col-sm-6 col-md-4 vivid-post',
                             createButton: 'New post',
                             enablePageHtml: 'true',
                             html:'
-                                 <div class="col-sm-4">
+                                <a href="{{ page.url }}">
                                     <div class="vivid-entry">
                                         <div class="vivid-entry-img">
                                             {% if keys.image %}
@@ -28,36 +29,32 @@
                                             {% endif %}
                                         </div>
                                         <div class="vivid-entry-info">
-                                            <a href="{{ page.url }}">
-                                                <h3>{{ keys.title }}</h3>
-                                            </a>
-                                                
+                                            <h3>{{ keys.title }}</h3>
                                             <p>{{ keys.text | limitWords: 10 }}</p>
                                             <h5 class="date">{{ page.publishDate | format:"%e %B %Y" }}</h5>
                                         </div>
                                     </div>
-                                </div>
-                
+                                </a>
                             ',
                             sortBy:'publishedDate descending',
                             useChildPages: 'true',
-                            perPage: '25',
+                            perPage: '9',
                             offset: '0',
                             paginationHtml:'
+                            <div class="clearfix"></div>
                             {% if totalPages > 1 %}
-                                <div id="pagination">
-                
-                                    <div class="pages">
-                                        {% paginate page in pages current: pageNumber limit: 10 %}
-                                            {% if page == pageNumber %}
-                                                <span>{{ page }}</span>
-                                            {% else %}
-                                                <a href="{{ page | pageNumberToUrl }}">{{ page }}</a>
-                                            {% endif %}
-                
-                                        {% endpaginate %}
-                                    </div>
-                                </div>
+                                    <nav class="text-center">
+                                        <ul class="pagination">
+                                            {% paginate page in pages current: pageNumber limit: 10 %}
+                                                {% if page == pageNumber %}
+                                                <li class="active"><a href="{{ page | pageNumberToUrl }}">{{ page }}</a></li>
+                                                {% else %}
+                                                <li><a href="{{ page | pageNumberToUrl }}">{{ page }}</a></li>
+                                                {% endif %}
+                                            {% endpaginate %}
+
+                                        </ul>
+                                    </nav>
                             {% endif %}
                             '
                         ) }
@@ -65,34 +62,37 @@
                 </div>
                 
                 <div class="col-md-3">
-                    <div class="vivid-sidemenu">
-                        { com_link(
-                            id: '196',
-                            syncId: '196',
-                            description: 'Title',
-                            htmlElement: 'p',
-                            class: 'label-style'
-                        )}
-                        
+                    <div class="vivid-sidemenu-latest-posts">
                         <ul>
-                           <!--  { com_liquid ( id:'199', description:'Tags', code:'
-                                {% if page.children %}
-                                    {% if page.children.tags != empty %}
-                                        {% for tag in page.children.tags %}
-                                            <li
-                                                {% for activeTag in keys.tagsFilter %}
-                                                    {% if activeTag == tag %}
-                                                        class="active"
-                                                    {% endif %}
-                                                {% endfor %}
-                                            >
-                                                <a href="{{ tag | tagToUrl:page }}">{{ tag }}</a>
-                                            </li>
-                                        {% endfor %}
-                                    {% endif %}
-                                {% endif %}
-                            ' ) } -->
-                            
+                            [% set current = current() %]
+
+                            [% set tags = childrenTags('limit: 10', 'pageLimit: 5') %]
+
+                            [% if tags == false %]
+                                [[ "Group your posts with tags. They will show up here" | retell | onlyInLiveEdit ]]
+                            [% endif %]
+
+                            [% for tag in tags %]
+
+                                [% if current.tag.id == tag.id %]
+                                    <li class="active">
+                                [% else %]
+                                    <li>
+                                [% endif %]
+
+                                        <a href="[[ current.page.url ]]/[[ tag.name | url('tag') ]]"    >
+                                            <h4>[[ tag.name ]]</h4>
+                                        </a>
+
+                                        <ul class="latest-posts">
+                                            [% for page in tag.pages %]
+                                                <li>
+                                                    <a href="[[ page.id | url('page') ]]">[[ page.name ]]</a>
+                                                </li>
+                                            [% endfor %]
+                                        </ul>
+                                </li>
+                            [% endfor %]
                         </ul>
                     </div>
                 </div>
@@ -103,7 +103,6 @@
     {{ partial: footer.tpl }}
 
 </div>
-
 ```
 
 ### `vivid_blog.xml`
@@ -114,6 +113,7 @@
 
     <options>
         <component_id_offset>1000</component_id_offset>
+        <template_engine>active</template_engine>
     </options>
 
     <template_config>
@@ -160,27 +160,50 @@ This styles both vivid blog overview and vivid blog post.
 	width: 100%;
 	position: relative;
 	background-color: #F5F5F5;
-	padding-top: 40px;
+	padding-top: 30px;
 	padding-bottom: 50px;
 }
 
 @media screen and (min-width: 768px) {
 	.vivid-blog-wrapper {
+		padding-top: 60px;
 		padding-bottom: 150px;
 	}
-}
-
-.vivid-blog-wrapper .post:nth-child(3n+4) {
-	clear: both;
 }
 
 @media screen and (min-width: 1200px) {
 	.vivid-blog-wrapper .col-md-4:nth-child(3n) .vivid-entry {
 		float: right;
 	}
+	
 	.vivid-blog-wrapper .col-md-4:nth-child(3n+2) .vivid-entry {
 		margin-right: auto;
 		margin-left: auto;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.vivid-post:nth-child(2n+3) {
+		clear: both;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.vivid-post:nth-child(3n+4) {
+		clear: both;
+	}
+}
+
+.vivid-blog-post-wrapper {
+	width: 100%;
+	position: relative;
+	background-color: #F5F5F5;
+	padding-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+	.vivid-blog-post-wrapper {
+		padding-top: 50px;
 	}
 }
 
@@ -254,6 +277,7 @@ This styles both vivid blog overview and vivid blog post.
 .vivid-entry-info p {
 	font-size: 13px;
 	line-height: 22px;
+	color: #2a2a2a;
 }
 
 .vivid-entry-info .date {
@@ -262,22 +286,31 @@ This styles both vivid blog overview and vivid blog post.
 	right: 35px;
 }
 
-.vivid-blog-wrapper + footer {
+.vivid-blog-wrapper + footer,
+.vivid-blog-post-wrapper + footer {
 	margin-top: 0;
 }
 
-.top-menu-wrapper + .vivid-blog-wrapper {
+.top-menu-wrapper + .vivid-blog-wrapper,
+.top-menu-wrapper + .vivid-blog-post-wrapper {
 	margin-top: -60px;
 }
 
 @media screen and (max-width: 768px) {
-	.top-menu-wrapper + .vivid-blog-wrapper {
+	.top-menu-wrapper + .vivid-blog-wrapper,
+	.top-menu-wrapper + .vivid-blog-post-wrapper {
 		margin-top: -30px;
 	}
 }
 
 .vivid-blog-post {
 	max-width: 830px;
+}
+
+@media screen and (min-width: 768px) {
+	.vivid-blog-post {
+		padding-bottom: 60px;
+	}
 }
 
 .vivid-blog-top h2 {
@@ -292,6 +325,17 @@ This styles both vivid blog overview and vivid blog post.
 
 .vivid-blog-top small h5 {
 	display: inline-block;
+}
+
+.vivid-blog-top .author:after {
+	content: '\00b7';
+	color: #505559;
+	padding: 0 3px;
+}
+
+.vivid-blog-top .share-icon {
+	font-size: 12px;
+	padding-right: 6px;
 }
 
 .vivid-blog-content {
@@ -315,9 +359,44 @@ This styles both vivid blog overview and vivid blog post.
 	}
 }
 
+.vivid-blog-content p,
+.vivid-blog-content li {
+	color: #2a2a2a;
+}
+
 .vivid-blog-content ul li,
 .vivid-blog-content ol li {
 	padding-bottom: 5px;
+}
+
+.vivid-post-tags ul {
+	list-style-type: none;
+}
+
+.vivid-post-tags li {
+	display: inline-block;
+}
+
+.vivid-post-tags a {
+	padding: 7px 13px;
+	background-color: #fff;
+	border-radius: 2px;
+	margin-right: 6px;
+}
+
+@media screen and (min-width: 768px) {
+	.vivid-post-share {
+		text-align: right;
+	}
+}
+
+.vivid-post-share .share-icon {
+	font-size: 16px;
+	padding-left: 10px;
+}
+
+.share-title {
+	display: inline-block;
 }
 
 .vivid-sidemenu {
@@ -343,15 +422,15 @@ This styles both vivid blog overview and vivid blog post.
 	line-height: 24px;
 }
 
-.vivid-sidemenu li a {
-	padding: 7px 0;
-	display: block;
-	opacity: 0.7;
-	font-size: 13px;
-	line-height: 20px;
+.vivid-sidemenu a {
+  padding: 7px 0;
+  display: block;
+  opacity: 0.7;
+  font-size: 13px;
+  line-height: 20px;
 }
 
-.vivid-sidemenu li a:hover {
+.vivid-sidemenu a:hover {
 	opacity: 1;
 	cursor: pointer;
 }
@@ -367,6 +446,85 @@ This styles both vivid blog overview and vivid blog post.
 
 .vivid-sidemenu li:last-child a {
 	padding-bottom: 0;
+}
+
+.vivid-sidemenu-latest-posts {
+	margin-top: 20px;
+}
+
+@media screen and (min-width: 992px) {
+	.vivid-sidemenu-latest-posts {
+		margin-top: 0;
+	}
+}
+
+.vivid-sidemenu-latest-posts p {
+	margin-bottom: 10px;
+}
+
+.vivid-sidemenu-latest-posts ul {
+	list-style-type: none;
+}
+
+.vivid-sidemenu-latest-posts .latest-posts {
+	border-left: 1px solid #dddddd;
+	padding-left: 15px;
+	margin-bottom: 20px;
+	line-height: 24px;
+}
+
+.vivid-sidemenu-latest-posts li a {
+	padding: 5px 0;
+	display: block;
+	opacity: 0.7;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+.vivid-sidemenu-latest-posts li a:hover {
+	opacity: 1;
+	cursor: pointer;
+	color: inherit;
+}
+
+.vivid-sidemenu-latest-posts h3 {
+	border-bottom: 1px solid transparent;
+	display: inline-block;
+	font-size: 18px;
+}
+
+.vivid-sidemenu-latest-posts h3:hover {
+	border-bottom: 1px solid;
+	opacity: 1;
+}
+
+.vivid-sidemenu-latest-posts .active h3 {
+	border-bottom: 1px solid;
+	display: inline-block;
+	opacity: 1;
+}
+
+.vivid-sidemenu-latest-posts .active a {
+	color: inherit;
+}
+
+.vivid-post-navigate {
+	background-color: #fff;
+	padding: 50px 0;
+}
+
+.vivid-post-navigate .icon {
+	color: #505559;
+	font-size: 20px;
+	vertical-align: middle;
+}
+
+.vivid-post-navigate .next-arrow {
+	padding-left: 10px;
+}
+
+.vivid-post-navigate .prev-arrow {
+	padding-right: 10px;
 }
 
 ```

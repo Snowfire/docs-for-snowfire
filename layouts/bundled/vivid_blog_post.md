@@ -5,7 +5,7 @@
 ```html
 {{ partial: top.tpl }}
 
-<div class="vivid-blog-wrapper vivid-blog">
+<div class="vivid-blog-post-wrapper">
     <div class="container">
     	<div class="row">
 			<div class="col-md-9">
@@ -27,12 +27,18 @@
 					        	htmlElement: 'h5', 
 					        	class: 'author'
 				        	) }
-                            <span class="dot-divider">·</span>
+
 					        <h5>{ fnc_publishDate(format: '%e %B %Y') }</h5>
+
+                            <span class="dot-divider"></span>
+
+                            <a class="share-icon share-icon-fb fa fa-facebook" data-shareurl="{ var_url }" data-sharetitle="{ var_pageName }" href="javascript:;"></a>
+                            <a class="share-icon share-icon-twitter fa fa-twitter" data-shareurl="{ var_url }" data-sharetitle="{ var_pageName }" href="javascript:;"></a>
+                            <a class="share-icon share-icon-linkedin fa fa-linkedin" data-shareurl="{ var_url }" data-sharetitle="{ var_pageName }" href="javascript:;"></a>
 				        </small>
 			        </header>
 
-					<div class="vivid-blog-content">
+					<main class="vivid-blog-content">
 					    <div class="main_image">
 					        { com_image2(
 					            id: '196',
@@ -53,43 +59,99 @@
     				        	key: 'text'
     			        	) }
                         </div>
-		        	</div>
+		        	</main>
 			
 				    {{ snippet_area.main }}
+
+                    <div class="vivid-post-footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="vivid-post-tags">
+                                    { com_liquid2 (
+                                        id:'105', 
+                                        description:'Tags will be displayed here',
+	                                    selectablePage:'false',
+                                        code:'
+                                            <ul>
+                                            {% for page.tags as tag %}
+                                                <li><a href="{{ tag | tagToUrl:page }}">{{ tag }}</a></li>
+                                            {% end_for %}
+                                            </ul>
+                                        ')
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="vivid-post-share">
+                                    <p class="label-style share-title">Share this:</p>
+
+                                    <a class="share-icon share-icon-fb fa fa-facebook" data-shareurl="{ var_url }" data-sharetitle="{ var_pageName }" href="javascript:;"></a>
+                                    <a class="share-icon share-icon-twitter fa fa-twitter" data-shareurl="{ var_url }" data-sharetitle="{ var_pageName }" href="javascript:;"></a>
+                                    <a class="share-icon share-icon-linkedin fa fa-linkedin" data-shareurl="{ var_url }" data-sharetitle="{ var_pageName }" href="javascript:;"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{ snippet_area.comments }}
+
 			    </div>
 			</div>
+
 			<div class="col-md-3">
-				<!-- <div class="vivid-sidemenu">
-                    { com_singlerow(
-                        id: '198',
-                        syncId: '198',
-                        description: 'Title',
-                        htmlElement: 'p',
-                        class: 'label-style'
-                    )}
-                    
-                    { com_liquid2 (
-                        id:'199', 
-                        description: 'Tags', 
-                        selectablePage: 'false', 
-                        siblingTags: 'true',
-                        code:'
-                        <ul>
-                            {% for siblingTags as tag %}
-                                <li>
-                                    <a href="{{ tag | tagToUrl:page }}">{{ tag }}</a>
-                                </li>
-                            {% end_for %}
-                         </ul>
-                    ') }
-				</div> -->
+				<div class="vivid-sidemenu-latest-posts">
+					[% set parent = currentParent() %]
+
+					<ul>
+						[% for tag in siblingTags('limit: 10', 'pageLimit: 5') %]
+							<li>
+								<a href="[[ parent.page.url ]]/[[ tag.name | url('tag') ]]">
+                                    <h4>[[ tag.name ]]</h4>
+                                </a>
+
+								<ul class="latest-posts">
+									[% for page in tag.pages %]
+									<li>
+										<a href="[[ page.id | url('page') ]]">[[ page.name ]]</a>
+									</li>
+									[% endfor %]
+								</ul>
+							</li>
+						[% endfor %]
+					</ul>
+				</div>
 			</div>
 			
 	    </div>
     </div>
+
+    <div class="vivid-post-navigate">
+        <div class="container">
+            <div class="inner text-center">
+                { com_liquid2 ( 
+                    id:'220', 
+                    description:'Previous and next post', 
+                    code:'
+                        {% if page.next %}
+                            <a href="{{ page.next.url }}" class="icon prev-arrow"><i class="fa fa-angle-left"></i></a>
+                        {% end_if %}
+                    
+                        <a href="{{ parent.url }}" class="label-style">View all</a>
+                    
+                        {% if page.previous %}
+                            <a href="{{ page.previous.url }}" class="icon next-arrow"><i class="fa fa-angle-right"></i></a>
+                        {% end_if %}
+                    ' 
+                ) }
+            </div>
+        </div>
+    </div>
+
 </div>
 
+
 {{ partial: footer.tpl }}
+
 ```
 
 #### `vivid_blog_post.xml`
@@ -100,6 +162,7 @@
 
     <options>
         <component_id_offset>1000</component_id_offset>
+        <template_engine>active</template_engine>
     </options>
 
     <snippets area="main" width="1130" column_spacing="2%" all_user_snippets="true">
@@ -117,6 +180,10 @@
         <snippet id="product" />
         <snippet id="sf_btn" />
         <snippet id="color_block" />
+    </snippets>
+
+    <snippets area="comments" width="1130" column_spacing="2%" add_button="Add comments" all_user_snippets="true">
+        <snippet id="facebook_comments" />
     </snippets>
 
     <snippets area="footer" width="1160" column_spacing="2%" sync="true">
