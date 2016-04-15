@@ -106,7 +106,7 @@ video#bgvid {
     min-height: 500px;
     top: 0;
     background-size: cover;
-    background-position: 20%;
+    background-position: center;
     z-index: 0;
     pointer-events: auto;
 }
