@@ -10,7 +10,7 @@ Video background with image fallback for moblie.
 <section class="video-section">
 	<div class="video-wrapper">
 		<video autoplay muted loop poster="" id="bgvid">
-		    <source src="http://d29ly7uq16xz5t.cloudfront.net/sociala-kundraketen3.mp4" type="video/mp4">
+		    <source src="" type="video/mp4">
 		</video>
 	</div>
 	
