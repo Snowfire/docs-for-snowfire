@@ -55,3 +55,18 @@ Example access:
 If you are on the single blog post layout and want to get all tags on the blog. This function works exactly like `childrenTags()` with the same parameters, same return etc.
 
 ---
+
+### link()
+
+Used to create dynamic links to system functions.
+
+## Links
+
+`[[ link('section:action') ]]`
+
+Parameters:
+* member &ndash; (login or logout)
+
+Example
+
+`[[ link('member:login') ]]`
