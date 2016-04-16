@@ -60,8 +60,6 @@ If you are on the single blog post layout and want to get all tags on the blog. 
 
 Used to create dynamic links to system functions.
 
-## Links
-
 `[[ link('section:action') ]]`
 
 Parameters:
