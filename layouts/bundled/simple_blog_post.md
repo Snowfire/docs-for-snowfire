@@ -7,39 +7,48 @@
 
     {{ partial: top.tpl }}
 
-    <div id="simple-blog" class="snippet_area_main">
+    <div class="container">
+	    <div id="simple-blog" class="simple-blog one-post">
 
-	    <article>
-	        <header>
-				<a href="{ var_pageFullUrl }">{ com_singlerow(id: '195', description: 'Title', htmlElement: 'h2', value: '{ var_pageName }', key: 'title' ) }</a>
-		        <small>
-			        { com_singlerow(id: '194', description: 'Author', htmlElement:'span', class:'author', key:'author' ) }
-			        <span class="date">{ fnc_publishDate(format: '%e %B %Y') }</span>
-		        </small>
-	        </header>
-		    <div class="main_image">
-		        { com_image2(
-		            id: '196',
-		            description: 'Image',
-		            width: '650',
-		            height: '300',
-					resizable: 'false',
-		            crop: 'true',
-		            key: 'image'
-		        ) }
-		    </div>
+		    <article>
+		        <header>
+					<a href="{ var_pageFullUrl }">{ com_singlerow(id: '195', description: 'Title', htmlElement: 'h2', value: '{ var_pageName }', key: 'title' ) }</a>
+			        <small>
+				        { com_singlerow(
+				        	id: '194', 
+				        	description: 'Author', 
+				        	htmlElement: 'h5',
+				        	key: 'author' 
+			        	) }
+			        	<span class="dot-divider">·</span>
+				        <h5>{ fnc_publishDate(format: '%e %B %Y') }</h5>
+			        </small>
+		        </header>
+			    <div class="main_image">
+			        { com_image2(
+			            id: '196',
+			            description: 'Image',
+			            width: '830',
+						resizable: 'false',
+						dimensions: 'min-max',
+			            key: 'image'
+			        ) }
+			    </div>
 
-	        { com_wysiwyg(id: '193', description: 'Enter text', enableLists: 'true', key: 'text') }
+		        { com_wysiwyg(id: '193', description: 'Enter text', enableLists: 'true', key: 'text') }
 
-        </article>
+	        </article>
 
-	    {{ snippet_area.main }}
+		    	{{ snippet_area.main }}
 
+
+	    </div>
     </div>
 
     {{ partial: footer.tpl }}
 
 </div>
+
 ```
 
 
@@ -56,7 +65,6 @@
     <snippets area="main" width="1130" column_spacing="2%" all_user_snippets="true">
         <snippet id="slider" />
         <snippet id="text" />
-        <snippet id="image2" />
         <snippet id="video" />
         <snippet id="form" />
         <snippet id="map" />
@@ -65,17 +73,15 @@
         <snippet id="quote2" />
         <snippet id="facebook" />
         <snippet id="facebook_comments" />
-        <snippet id="divider" />
         <snippet id="sociallinks" />
         <snippet id="product" />
-        <snippet id="cta_button" />
-
+        <snippet id="sf_btn" />
+        <snippet id="color_block" />
     </snippets>
 
     <snippets area="footer" width="1160" column_spacing="2%" sync="true">
         <snippet id="slider_synced" />
         <snippet id="text_synced" />
-        <snippet id="image2_synced" />
         <snippet id="video_synced" />
         <snippet id="form_synced" />
         <snippet id="map_synced" />
@@ -87,9 +93,9 @@
         <snippet id="divider" />
         <snippet id="sociallinks_synced" />
         <snippet id="product_synced" />
-        <snippet id="cta_button_synced" />
+        <snippet id="sf_btn_synced" />
     </snippets>
-
 
 </snippet_container>
 ```
+
