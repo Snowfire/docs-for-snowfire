@@ -91,6 +91,15 @@ Converts a date string to a specific format (see http://se2.php.net/strftime)
 {{ page.next.publishDate | stringToDateFormat:"%B %e, %Y" }}
 ```
 
+#### truncate
+
+Truncates a string to a max number of characters or words
+
+```
+{{ event.description | truncate:10 }}
+{{ event.description | truncatewords:10 }}
+```
+
 
 ### Examples
 
