@@ -81,25 +81,31 @@ Set it to "page" to enable more flexible keys (specific pages or tags)
 Key data can be tampered with using functions. Don't forget that functions are chainable: `{{ page.html | getHtmlById:"blog-post-content" | debug }}`.
 
 
-#### Limit words
+#### Truncate
 
-	limitWords:[Number of words allowed]
+	truncate:[Number of characters allowed]
+
+Strips all HTML, remove characters above the limit and appends `...` if necessary.
+
+#### Truncate words
+
+	truncatewords:[Number of words allowed]
 
 Strips all HTML, remove words above the limit and appends `...` if necessary.
 
 ##### Example
 
-	{{ keys.body | limitWords:10 }}
+	{{ keys.body | truncatewords:10 }}
 
-#### Limit words HTML
+#### Truncate words HTML
 
-	limitWordsHtml:[Number of words allowed]
+	truncatewordsHtml:[Number of words allowed]
 
-Same as `limitWords`, but doesn't strip HTML.
+Same as `truncatewords`, but doesn't strip HTML.
 
 ##### Example
 
-	{{ keys.body | limitWordsHtml:10 }}
+	{{ keys.body | truncatewordsHtml:10 }}
 
 #### HTML attribute
 
@@ -215,9 +221,9 @@ Url: <a href="{{ page.url }}">{{ page.url }}</a>
 {{ keys.heading }}
 ==================
  
-{{ keys.body | limitWords:5 }}
-{{ keys.body | limitWords:10 }}
-{{ keys.body | limitWords:20 }}
+{{ keys.body | truncatewords:5 }}
+{{ keys.body | truncatewords:10 }}
+{{ keys.body | truncatewords:20 }}
 {{ keys.body }}
 ----------------------------------
  
