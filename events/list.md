@@ -13,6 +13,7 @@ Each parameter is key:value, multiple parameters are separated with |
 * `starts_before`  - `now` (if you want to fetch events that has already started)
 * `starts_after`  - `now` (if you want to fetch events that has a future start date)
 * `images`- `name(width,height)` (resizes/crops the event image to a new format. Warning: ignores whatever crop the user has made in the admin ui)
+* `query` - Search part of event title attribute
 
 
 ```html
