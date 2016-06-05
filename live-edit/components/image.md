@@ -99,7 +99,7 @@ If you have defined a key named `image` on your blog posts image2 component, thi
 	html:'
 		<article class="posts">
 			<div class="image">
-				<div style="background-image:url({{ keys.image | metaToImage }})"></div>
+				<div style="background-image:url({{ keys.image | metaToImage: "crop", "200","200" }})"></div>
 			</div>
 			<a href="{{ page.url }}">{{ keys.title }}</a>
 		</article>
