@@ -47,6 +47,8 @@
                     <width>100</width>
                 </image>
             </images>
+            
+            <shortDescription length="140"></shortDescription>
 
         </settings>
     </template_config>
