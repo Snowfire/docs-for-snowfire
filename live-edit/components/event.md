@@ -20,6 +20,7 @@ Parameters
 ----------
 
 * `image` -  **required**, the width/height of the primary image
+* `setLandingPageUrlToCurrentPage` - optional, please read below about this option
 
 Event properties
 ---------------
@@ -93,3 +94,12 @@ Fully fledged example
   '
 )}
 ```
+
+setLandingPageUrlToCurrentPage
+------------------------------
+
+An event might have a custom landing page, instead of the default one based on event.tpl. A custom landing page is only used in specific scenarios and can be external or internal. If you have an external event website you can use a url as landing page.
+
+An internal landing page could be useful in this scenario:
+
+Let's say you have a `courses.tpl` and each new course is `course.tpl`. This is just an ordinary blog without connection to Snowfire Events. Inside `course.tpl` you add multiple `com_event` (on for each course date). Now you want to enable the `setLandingPageUrlToCurrentPage` which will automatically set the landing page for the course to the blog post.
