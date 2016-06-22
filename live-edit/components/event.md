@@ -30,6 +30,7 @@ These are available as `{{ event.X }}` in the `html` parameter. Example: `{{ eve
 * `title`
 * `image` - The event image in the resolution you have decided in the `image` parameter
 * `image_escaped` - The event with escaped characters, use this when you have the image as a css background image
+* `ticket_url`
 * `url`
 * `description`
 * `starts_at` - Use `{{ event.starts_at | stringToDateFormat:"%e %B %Y" }}` to choose date format
@@ -90,6 +91,8 @@ Fully fledged example
     {% if (event.description_short) %}
     	<p>Short description: {{ event.description_short | nl2br }}</p>
     {% end_if %}	
+    
+    <div><a href="{{ event.ticket_url }}">Buy ticket</a></div>
     
   '
 )}
