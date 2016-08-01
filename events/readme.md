@@ -8,14 +8,6 @@ A theme is require to have `event.tpl` and `events.xml` to work with Events.
 * [Categories](categories.md)
 * [List of events](list.md)
 
-### Parameters
-
-These settings will make sure the Flake event admin UI asks for three images and resize/crops them accordingly.
-
-* `name` - this value must be unique and only small characters (A-Z) allowed
-* `title` - visible for the user inside the UI
-* `width/height` - in px
-
 ### Snowfire component 
 
 Display a simple event in `event.tpl`
@@ -50,6 +42,38 @@ Display a simple event in `event.tpl`
 )}
 ```
 
+### Images
+
+These settings will make sure the Flake event admin UI asks for three images and resize/crops them accordingly.
+
+* `name` - this value must be unique and only small characters (A-Z) allowed
+* `title` - visible for the user inside the UI
+* `width/height` - in px
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<snippet_container>
+
+    [..]
+
+    <template_config>
+        <settings>
+        
+            [..]
+
+            <images>
+                <image name="primary" title="Primary image">
+                    <width>1920</width>
+                    <height>650</height>
+                </image>
+            </images>
+
+        </settings>
+    </template_config>
+
+</snippet_container>
+```
+
 ### Short description
 
 We support two description fields. The short description is hidden by default. To enable it, add `shortDescription` in `settings` like this:
@@ -74,6 +98,7 @@ We support two description fields. The short description is hidden by default. T
 ```
 
 The short description field will now show up when you edit an event. It will be limited to `140` characters. But it is up to you to choose a limit that fits your layout. We recommend using the short description when you list many events on a single page. 
+
 
 ### Ribbon
 
