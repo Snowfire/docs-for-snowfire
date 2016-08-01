@@ -24,4 +24,4 @@ __Example__:
 * `useRootParentPageChildren` - This will automatically create a menu from the root parent's children pages. Defaults to false.
 * `noCreateButton` - boolean. Set if no "Create new..." link in the menu is wanted.
 * `activeByPageStructure` - boolean. Instead of using menu structure to detect what item is active, use page structure.
-* `itemHtml` - HTML markup for an item. Defaults to `<li><a %class% href="%link%">%name%</a></li>`
+* `itemHtml` - HTML markup for an item. Defaults to `<li><a %class% href="%link%">%name%</a></li>` (Use %description% to get output from the optional description field when editing a menu item)
