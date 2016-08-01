@@ -39,7 +39,6 @@
                     <width>1920</width>
                 </image>
                 <image name="secondary" title="Secondary image">
-                    <height>150</height>
                     <width>200</width>
                 </image>
                 <image name="grid" title="Grid image">
@@ -55,3 +54,9 @@
 
 </snippet_container>
 ```
+
+### Images height/width
+
+We always recommend to specify a width and height for an image. This will make it simple to crop the image for different views (single event, event list). 
+
+If you don't provide `height` (as the secondary image in the example above) we will set the image width to `200` and then resize the image proportionally. 
