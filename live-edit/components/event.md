@@ -28,8 +28,9 @@ Event properties
 These are available as `{{ event.X }}` in the `html` parameter. Example: `{{ events.title }}`
 
 * `title`
-* `image` - The event image in the resolution you have decided in the `image` parameter
+* `image` - The event image in the resolution you have decided in the `image` parameter (please scroll down for more info regarding this image)
 * `image_escaped` - The event with escaped characters, use this when you have the image as a css background image
+* `images` - All images, use `{{ images.primary.src }}` to access it
 * `ticket_url`
 * `url`
 * `description`
@@ -97,6 +98,12 @@ Fully fledged example
   '
 )}
 ```
+
+A note about the image
+----------------------
+
+If you use `{{ event.image }}` please note that it will look for an image called `primary`. If the system can't find an image with the name primary (i.e. you have named it something else) it will grab the first image uploaded to that event.
+
 
 setLandingPageUrlToCurrentPage
 ------------------------------
