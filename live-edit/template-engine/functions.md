@@ -48,6 +48,8 @@ Will get the current pages sub pages tags. I.e. if you are on the main blog layo
 Parameters:
 * limit &ndash; (numeric, required)
 * pageLimit &ndash; (numeric, optional)
+* only &ndash; (comma separated, optional) &ndash; `only: Sun, Cloud` (will only return these two tags if they exist)
+* exclude &ndash; (comma separated, optional) &ndash; `exclude: Sun, Cloud` (will return all tags except Sun and Cloud)
 
 Returns an array of tags:
 
