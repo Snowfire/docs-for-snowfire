@@ -14,6 +14,33 @@ This example uses a function called `tags` and sends `limit` and `pageLimit` as 
 
 ## List of functions
 
+### current()
+
+Retrieves information about the current page and request. Example:
+
+```
+[% set current = current() %]			
+<h1>[[ current.tag.name ]]</h1>
+```
+
+This is the data `current()` returns:
+
+```json
+{
+	"page": {
+		"id": "41",
+		"name": "About us",
+		"url": "/about-us"
+	},
+	"tag": {
+		"id": "314",
+		"name": "Weather"
+	}
+}
+```
+
+
+
 ### childrenTags()
 
 Will get the current pages sub pages tags. I.e. if you are on the main blog layout and want to get all tags from posts.
