@@ -75,6 +75,17 @@ What order the pages should be rendered in.
 
 Set it to "page" to enable more flexible keys (specific pages or tags)
 
+### `enableTags`
+
+Get access to all tags that belongs to a page. With this set to true you can have the following code inside the `html` parameter:
+
+```
+<ul>
+	{% for tag in page.tags %}
+		<li>{{ tag.name }}</li>
+	{% endfor %}
+</ul>
+```
 
 ### `functions`
 
