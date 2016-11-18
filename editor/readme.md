@@ -21,7 +21,7 @@ body {
 _If you have a style called `_menu`_
 
 
-## JS
+## JavaScript
 
 All JS are transpiled with Browserify to make it possible to have functions in different files.
 
@@ -41,4 +41,12 @@ Now include it in the `app` file with
 var name = require('./name');
 var welcomePhrase = name('Emil');
 alert(welcomePhrase);
+```
+
+## Partials
+
+If you create a partial called `extra`, include it in a template file like this:
+
+```html
+{{ partial: extra.tpl }}
 ```
