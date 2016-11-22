@@ -11,7 +11,7 @@ The only file that is included on your website is `style.css`. If you create oth
 the style file like this:
 
 ```scss
-@import 'menu'
+@import '_menu'
 
 body {
   background: orange;
