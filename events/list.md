@@ -12,6 +12,7 @@ Each parameter is key:value, multiple parameters are separated with |
 * `currentPageEvent` - `skip` / `include` (don't include the event you are currently viewing)
 * `starts_before`  - `now` (if you want to fetch events that has already started)
 * `starts_after`  - `now` (if you want to fetch events that has a future start date)
+* `sort_order` - `asc` / `desc` (change the sort order based on event date)
 * `images`- `name(width,height)` (resizes/crops the event image to a new format. Warning: ignores whatever crop the user has made in the admin ui)
 * `image` - `width,height` (resizes/crops the first image for the event
 * `query` - Search part of event title attribute
