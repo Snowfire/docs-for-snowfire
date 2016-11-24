@@ -23,3 +23,7 @@ Go to the `style` file in the code navigation tree. Enter something simple to ge
 ```
 
 This will change the navigation bar to a black background with white links and a yellowish hover color.
+
+Save the file (CMD + S is very nice keyboard shortcut). Now your website in another tab and see how it looks.
+
+Congratulations, you've just completed your first code design change with Snowfire! 
