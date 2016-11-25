@@ -1,10 +1,10 @@
 # Markdown
 
-```xml
-{ com_markdown ( id:'1', description:'Markdown' ) }
+```html
+<markdown id="{{ component_id }}" description="Markdown"></markdown>
 ```
 
-### Show code blocks with syntax highlight
+## Show code blocks with syntax highlight
 
 We support GitHub flavoured code blocks with backticks \`. To make these show up with syntax highlight, add this code to your `head` tag.
 
