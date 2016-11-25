@@ -23,7 +23,7 @@
 * `crop` - (boolean) Set `resizable` to `false` when using this parameter
 * `linkable` - (boolean)
 * `resizable` - (boolean)
-* `auto-link-to-file - (boolean)
+* `auto-link-to-file` - (boolean)
 
 ### html
 
