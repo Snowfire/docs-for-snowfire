@@ -1,4 +1,4 @@
-# Event descriptions & ribbons
+# Event description & ribbons
 
 ## Short description
 
