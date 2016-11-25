@@ -1,6 +1,4 @@
-# Markdown (BETA)
-
-**BETA** - This might now even work yet
+# Markdown
 
 ```xml
 { com_markdown ( id:'1', description:'Markdown' ) }

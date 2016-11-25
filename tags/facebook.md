@@ -1,5 +1,4 @@
-Facebook
-========
+# Facebook
 
 ```html
 { com_facebook(

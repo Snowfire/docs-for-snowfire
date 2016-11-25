@@ -1,5 +1,4 @@
-Form
-====
+# Form
 
 ```html
 { com_form(

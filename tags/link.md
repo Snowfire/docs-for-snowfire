@@ -1,5 +1,4 @@
-Image
-=====
+# Image
 
 ```xml
 { com_link ( id:'1', description:'Link' ) }

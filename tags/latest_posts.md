@@ -1,8 +1,6 @@
-Latest posts
-============
+# Latest posts
 
 This isn't a real component, we just juse com_keys to create a ul/li list of the 5 latest blog posts
-
 
 ```html
 	{ com_keys (

@@ -1,7 +1,6 @@
-Single row
-==========
+# Single row
 
-```xml
+```
 { com_singlerow ( 
 	id:'1', 
 	description:'Add headline', 
@@ -36,3 +35,4 @@ This will output the following HTML
 
 ```html
 <h2>User input</h2>
+```

@@ -1,5 +1,4 @@
-HTML
-====
+# HTML
 
 ```html
 { com_html(

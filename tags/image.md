@@ -1,5 +1,4 @@
-Image2
-=====
+# Image2
 
 ```xml
 { com_image2 (

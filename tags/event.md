@@ -1,9 +1,11 @@
-Event
-=====
+# Event
+
+Please see the events documentation on how to enable events. Once you have events up and running, this component 
+allows the user to add an event link anywhere on the website.
 
 ```xml
 { com_event (
-  id: '1', 
+  id: '{{ component_id }}', 
   description: 'Event',
   image: '295x295',
   html: '
@@ -16,14 +18,12 @@ Event
 )}
 ```
 
-Parameters
-----------
+## Parameters
 
 * `image` -  **required**, the width/height of the primary image
 * `setLandingPageUrlToCurrentPage` - optional, please read below about this option
 
-Event properties
----------------
+## Event properties
 
 These are available as `{{ event.X }}` in the `html` parameter. Example: `{{ events.title }}`
 
@@ -41,26 +41,9 @@ These are available as `{{ event.X }}` in the `html` parameter. Example: `{{ eve
 * `ribbon`* 
 
 
-Enable short description & ribbon
----------------------------------
+Short description and ribbon needs to be enabled, please see the events docs. 
 
-If you need a specific field for a shorter description and/or a ribbon text you can enable it in `event.xml` by adding the following:
-
-```xml
-<template_config>
-    <settings>
-        [..]
-        <shortDescription length="140"></shortDescription>
-        <ribbon></ribbon>
-    </settings>
-</template_config>
-```
-
-A ribbon is a single line of text with max 255 characters. 
-
-
-Fully fledged example
----------------------
+## Fully fledged example
 
 ```xml
 { com_event (
@@ -99,14 +82,12 @@ Fully fledged example
 )}
 ```
 
-A note about the image
-----------------------
+## A note about the image
 
 If you use `{{ event.image }}` please note that it will look for an image called `primary`. If the system can't find an image with the name primary (i.e. you have named it something else) it will grab the first image uploaded to that event.
 
 
-setLandingPageUrlToCurrentPage
-------------------------------
+## setLandingPageUrlToCurrentPage
 
 An event might have a custom landing page, instead of the default one based on event.tpl. A custom landing page is only used in specific scenarios and can be external or internal. If you have an external event website you can use a url as landing page.
 

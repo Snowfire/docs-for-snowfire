@@ -1,12 +1,14 @@
 # Menu
+
 Add a menu navigation element to your page. Usually used in a top or bottom partial. 
 
-__Example__:
+## Example
+
 ```javascript
 { com_menu ( 
-    id:'1',
-    description:'Menu',
-    itemHtml:'<li><a href="%link%" %class% id="menu-%nameSanitized%">%name%</a></li>' 
+    id: '1',
+    description: 'Menu',
+    itemHtml: '<li><a href="%link%" %class% id="menu-%nameSanitized%">%name%</a></li>' 
 ) }
 ```
 

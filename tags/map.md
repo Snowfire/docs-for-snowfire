@@ -1,5 +1,4 @@
-Map
-===
+# Map
 
 ```html
 { com_map ( 

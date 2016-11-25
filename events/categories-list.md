@@ -10,7 +10,7 @@
   flakeAdmin: 'events',
 
   code: '
-      <h1>Kategorier</h1>
+      <h1>Categories</h1>
       <ul>
           {% for categories as category %}
               <li><a href="{{ page.url }}?kategori={{ category.slug }}">{{ category.name }}</a></li>
