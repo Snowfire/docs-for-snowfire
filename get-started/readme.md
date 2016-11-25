@@ -1,4 +1,4 @@
-## Get Started
+# Get Started
 
 This is a collection of articles that describes how to code your own HTML, CSS and JS. First, join Snowfire as Agency to create unlimited test websites.
 
