@@ -1,3 +1,5 @@
+# Event
+
 Display a single event in your `event` template
 
 ```html
