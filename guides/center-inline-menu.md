@@ -1,6 +1,6 @@
 # Center inline menu
 
-Add this to `global.css` to center the inline menu. You might need to adjust the `.component-dropdown` height and the `.inline-menu` margin-top, depending on the height of your logo. 
+Add this to `style` css to center the inline menu. You might need to adjust the `.component-dropdown` height and the `.inline-menu` margin-top, depending on the height of your logo. 
 
 ## CSS
 
