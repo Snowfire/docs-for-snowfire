@@ -4,7 +4,7 @@ Snowfire Code gives you a single CSS file which allows you to write CSS that wil
 Please note that you can't access existing CSS code, you will have to write rules that override the defaults.
 We have a great examples page to show you how to do this.
 
-![](css-editor.png)
+![](/get-started/css-editor.png)
 
 Go to the `style` file in the code navigation tree. Enter something simple to get started, lets go with this:
 
