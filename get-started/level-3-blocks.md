@@ -13,8 +13,8 @@ I'll call my block `pretty-image`. By default you get this code:
 <wysiwyg id="{{ component_id_0 }}" description="Enter text here" enable-lists="true"></wysiwyg>
 ```
 
-This is a Snowfire specific tags which lets the user enter their own in a text editor. 
-See the tags documentation for all different kind of Snowfire specific tags you can use.
+This is a Snowfire specific tag which lets the user enter their own content in a text editor. 
+See the tags documentation for all different kind of Snowfire tags you can use.
 
 Now lets add an image
 
