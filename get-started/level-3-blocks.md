@@ -88,7 +88,7 @@ Now, what if we want a block that has a width of 100%? If we continue with this 
 }
 ```
 
-This will make the block become 100% and add a background color. To add padding, please create a wrapper div.
+This will make the block become 100% and adds a background color. To add padding, please create a wrapper div.
 Which is what I've done with the `<div class="hero">` in this example.
 
 Style it like this: 
