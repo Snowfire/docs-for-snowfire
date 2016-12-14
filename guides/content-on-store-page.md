@@ -1,4 +1,4 @@
-# Add content above products on store page
+# Add content on store page
 
 Add this to your javascript file
 
