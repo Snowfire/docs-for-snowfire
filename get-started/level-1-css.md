@@ -1,6 +1,6 @@
 # Level 1 – Get started with CSS
 
-Snowfire Code gives you a single CSS file which allows you to write CSS that will be applied to the website. 
+Firecode gives you a single CSS file which allows you to write CSS that will be applied to the website. 
 Please note that you can't access existing CSS code, you will have to write rules that override the defaults.
 We have a great examples page to show you how to do this.
 
@@ -30,7 +30,7 @@ Congratulations, you've just completed your first code design change with Snowfi
 
 ## SCSS
 
-Snowfire Code has built in support for the SCSS syntax. This makes is much faster and simpler to write code. A quick example:
+Firecode has built in support for the SCSS syntax. This makes is much faster and simpler to write code. A quick example:
 
 ```css
 .inline-menu ul li a {
@@ -72,7 +72,7 @@ Now head back to your `style` and write:
 @import '_top'
 ```
 
-This will import the top file into the `style`, which then will be included on your website. Imaging the possibilities! 
+This will import the top file into the `style`, which then will be included on your website. Imagine the possibilities! 
 
 Create partials for
 
