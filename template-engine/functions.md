@@ -112,7 +112,7 @@ where url is the api you want to send/get data from and redirect_to is what page
 
 Example access:
 ```
-<form method="post" action="[[getFormUrl('url: http://karlbergs.nu/biluthyrning_cargroups_json.phtml', 'redirect_to: prisinfo')]]">
+<form method="post" action="[[getFormUrl('url: http://remoteapiurl', 'redirect_to: nexturl')]]">
 ```
 
 ---
@@ -133,38 +133,14 @@ Example:
         {  
           "id":"25",
           "klass":"person",
-          "korkort":"B",
-          "grupp":"B",
-          "hyrtyp":"Personbil liten",
-          "arsmodel":"0",
-          "dack":"s",
-          "typ":"5-d\u00f6rr",
-          "ovrig_info":"Br\u00e4nslef\u00f6rbrukning: 0,4\r\n\u00d6vrigt: En br\u00e4nslesn\u00e5l 5-d\u00f6rrars bil med Automatisk klimatanl\u00e4ggning, Bluetooth, Parksensorer, Farth\u00e5llare, Regnsensor. mm",
-          "marke":"Citro\u00ebn",
-          "bilmodell":"C4",
-          "bild1":"citroen-c4.png",
-          "bild2":"",
-          "bild3":""
+          "korkort":"B"
         }
       ]
     },
     {  
       "rent":{  
         "Id":"3",
-        "Grupp":"B",
-        "StartDate":"2016-10-01",
-        "StartHour":"6",
-        "StopDate":"2016-10-30",
-        "StopHour":"23",
-        "ValidUntill":"2016-12-31",
-        "RentDays":30,
-        "RentExtraHours":17,
-        "RentKms":3100,
-        "RentType":"M&aring;nad 30 dygn inkl 2500&nbsp;km",
-        "TotalExVat":"7 951,00 kr ex moms ",
-        "TotalInclVat":"9 938,75 kr inkl moms",
-        "InsuranceExcessCoverExVat":"1 312,00 kr ex moms ",
-        "InsuranceExcessCoverInclVat":"1 640,00 kr inkl moms"
+        "Grupp":"B"
       }
     }
   ]
