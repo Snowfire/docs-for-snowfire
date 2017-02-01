@@ -1,7 +1,7 @@
 # Wysiwyg
 
 ```html
-<wysiwyg id="{{ component_id }}" description="Enter text"></wysiwyg>
+<sf-wysiwyg id="{{ component_id }}" description="Enter text"></sf-wysiwyg>
 ```
 
 ## Parameters
@@ -19,11 +19,11 @@
 ## A fully featured example
 
 ```html
-<wysiwyg
+<sf-wysiwyg
 	id="{{ component_id }}"
 	description="Enter text here"
 	custom-block-format="Quote|blockquote"
 	enable-lists="true"
 	attach-image="true"
-></wysiwyg>
+></sf-wysiwyg>
 ```
