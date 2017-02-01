@@ -1,7 +1,7 @@
 # Image
 
 ```html
-<image2
+<sf-image2
     id="{{ component_id }}"
     description="Image"
     width="500"
@@ -9,7 +9,7 @@
     crop="true"
     resizable="false"
     dimensions="min-max"
-></image2>
+></sf-image2>
 ```
 
 ## Parameters
@@ -49,7 +49,7 @@ Automatically set width by parent element.
 ### Use a `<div>` with a CSS background instead of an `<img>` tag
 
 ```
-<image2
+<sf-image2
 	id="{{ component_id }}"
 	description="Image"
 	width="1920"
@@ -63,7 +63,7 @@ Automatically set width by parent element.
 			<div {{ attributes_html | html_decode }} style='background-image:url({{ src }})'></div>
 		{% if link %}</a>{% end_if %}
 	"
-></image2>
+></sf-image2>
 ```
 
 ### Crop image
@@ -71,7 +71,7 @@ Automatically set width by parent element.
 This is great if you want to have multiple square images and maintain the aspect ratio between the images. This will force a larger image to be resized and cropped automatically. The user can change the crop, but it always maintains its aspect ratio (300x300, 1:1) in this example.
 
 ```
-<image2
+<sf-image2
 	id="{{ component_id }}"
 	description="Image"
 	width="300"
@@ -79,7 +79,7 @@ This is great if you want to have multiple square images and maintain the aspect
 	dimensions="min-max"
 	crop="true"
 	resizable="false"
-></image2>
+></sf-image2>
 ```
 
 ### Usage on a blog summary page
