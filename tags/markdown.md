@@ -1,7 +1,7 @@
 # Markdown
 
 ```html
-<markdown id="{{ component_id }}" description="Markdown"></markdown>
+<sf-markdown id="{{ component_id }}" description="Markdown"></sf-markdown>
 ```
 
 ## Show code blocks with syntax highlight
