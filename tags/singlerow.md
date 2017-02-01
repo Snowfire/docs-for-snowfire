@@ -1,11 +1,11 @@
 # Single row
 
 ```
-<singlerow
+<sf-singlerow
 	id="{{ component_id }}"
 	description="Add title"
 	html-element="h1"
-></singlerow>
+></sf-singlerow>
 ```
 
 ## Parameters
