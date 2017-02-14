@@ -50,6 +50,7 @@ Parameters:
 * pageLimit &ndash; (numeric, optional)
 * only &ndash; (comma separated, optional) &ndash; `only: Sun, Cloud` (will only return these two tags if they exist)
 * exclude &ndash; (comma separated, optional) &ndash; `exclude: Sun, Cloud` (will return all tags except Sun and Cloud)
+* pageId &ndash; (numeric, optional) &ndash; Specify the parent page to fetch children tags from. If not provided, we'll use the current page id
 
 Returns an array of tags:
 
