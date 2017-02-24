@@ -45,11 +45,11 @@ It is up to you if you want to allow anyone to register, or if it is only admini
 	id: '{{ component_id }}',
 	description: 'Membership',
 	selectablePage: 'false',
-	flake: 'members/session',
+	flake: 'members/person',
 	debug: 'false',
 	code: '
 		{% if loggedIn %}
-				Logged in as {{ person.first_name }} {{ person.last_name }}   |   
+			Logged in as {{ first_name }} {{ last_name }}   |   
   			<a href="{{ flake.public_url }}/members/logout?pid={{ page.id }}">Sign out</a>
 		{% else %}
 		    You are not signed in
