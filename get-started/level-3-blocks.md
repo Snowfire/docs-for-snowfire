@@ -10,7 +10,7 @@ A block is actually just a piece of HTML. Simple as that :) Now lets create one!
 I'll call my block `pretty-image`. By default you get this code:
 
 ```html
-<wysiwyg id="{{ component_id_0 }}" description="Enter text here" enable-lists="true"></wysiwyg>
+<sf-wysiwyg id="{{ component_id_0 }}" description="Enter text here" enable-lists="true"></sf-wysiwyg>
 ```
 
 This is a Snowfire specific tag which lets the user enter their own content in a text editor. 
@@ -22,7 +22,7 @@ Now lets add an image
 <div class="hero">
     <div class="hero-image">
         <!-- Snowfire Tag to allow the user to change image -->
-        <image2
+        <sf-image2
             id="{{ component_id_1 }}"
             description="Hero image"
             width="500"
@@ -30,11 +30,11 @@ Now lets add an image
             crop="true"
             resizable="false"
             dimensions="min-max"
-        ></image2>
+        ></sf-image2>
     </div>
     <div class="hero-text">
         <!-- Snowfire Tag to allow the user to change text -->
-        <wysiwyg id="{{ component_id_0 }}" description="Enter text here" enable-lists="false"></wysiwyg>
+        <sf-wysiwyg id="{{ component_id_0 }}" description="Enter text here" enable-lists="false"></sf-wysiwyg>
     </div>
 </div>
 ``` 
