@@ -1,5 +1,7 @@
 # Form
 
+Add a form to a page.
+
 ```html
 <sf-form
     id="{{ component_id_0 }}"
