@@ -2,15 +2,30 @@
 
 Add a menu navigation element to your page. Usually used in a top or bottom partial. 
 
-## Example
+## Simple example
 
 ```javascript
+<sf-menu
+    id="1"
+    description="Menu"
+>
+    <li><a href="%link%" %class% id="menu-%nameSanitized%">%name%</a></li>
+</sf-menu>
+```
+
+## Advanced example
+
+```
 { com_menu ( 
     id: '1',
     description: 'Menu',
-    itemHtml: '<li><a href="%link%" %class% id="menu-%nameSanitized%">%name%</a></li>' 
+    itemHtml: '<li><a href="%link%" %class% id="menu-%nameSanitized%">%name%</a></li>'
 ) }
 ```
+
+## Parameters
+
+Please note that you will need to use the advanced syntax example of you plan to ute `childItemHtml`. If you are using the simple syntax, please convert the camelCase parameters to kebab case (i.e `hasChildrenClass` becomes `has-children-class`
 
 * `menuId` - The ID of the menu. The component is not changeable from Live edit if this is specified.
 * `parentId` - Parent menu ID. Defaults to 0.

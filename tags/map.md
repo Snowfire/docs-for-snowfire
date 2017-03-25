@@ -1,10 +1,12 @@
 # Map
 
+Adds a Google map to the page.
+
 ```html
-{ com_map ( 
-	id:'{{ component_id }}', 
-	width:'{{ column_width }}', 
-	language:'en', 
-	htmlId:'map'
-) }
+<sf-map
+    id="{{ component_id_0 }}"
+    width="{{ column_width }}"
+    language="en"
+    html-id="map"
+></sf-map>
 ```

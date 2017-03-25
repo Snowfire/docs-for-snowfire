@@ -1,21 +1,19 @@
-Social links
-============
+# Social links
 
 Creates a ul/li list of links and icons to different social media websites
 
 ```html
-{ com_sociallinks(
-	id:'{{ component_id }}',
-	description:'Social links',
-	htmlElement:'ul'
-	class:'sociallinks',
-	caption:'false',
-	itemHtml:'
-		<li>
-			<a href="%url%">
-				<img src="/themes/clean/public/images/ui/%service%_icon.png" alt="%service%">
-			</a>
-		</li>
-	'
-) }
+<sf-sociallinks
+    id="{{ component_id_1 }}"
+    description="Social links"
+    html-element="ul"
+    class="sociallinks"
+    caption="false"
+>
+    <li>
+		<a href="%url%">
+			<img src="/themes/clean/public/images/ui/%service%_icon.png" alt="%service%">
+		</a>
+	</li>
+</sf-sociallinks>
 ```

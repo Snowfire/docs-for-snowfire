@@ -1,11 +1,10 @@
-Video
-=====
+# Video
 
 ```html
-{ com_image ( 
-	id:'{{ component_id }}', 
-	description:'video', 
-	maxWidth:'{{ column_width }}', 
-	enableVideo:'true' 
-) }
+<sf-image
+    id="{{ component_id_0 }}"
+    description="Video"
+    max-width="{{ column_width }}"
+    enable-video="true"
+></sf-image>
 ```

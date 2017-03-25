@@ -1,20 +1,21 @@
 # RSS Feed
 
+Display an RSS feed on your page.
+
 ```html
-{ com_rss (
-	id:'{{ component_id_0 }}',
-	description: 'RSS',
-	itemHtml: '
-		<li>
-			<a href="{{ link }}" target="_new">
-				<span class="date">{{ pubDate | date: "%Y-%m-%d" }}</span>
-				{{ title }}
-			</a>
-		</li>
-	',
-	htmlElement: 'ul',
-	limit: '5'
-) }
+<sf-rss
+    id="{{ component_id_1 }}"
+    description="RSS"
+    html-element="ul"
+    limit="5"
+>
+    <li>
+		<a href="{{ link }}" target="_new">
+			<span class="date">{{ pubDate | date: "%Y-%m-%d" }}</span>
+			{{ title }}
+		</a>
+	</li>
+</sf-rss>
 ```
 
 ## Different date styles

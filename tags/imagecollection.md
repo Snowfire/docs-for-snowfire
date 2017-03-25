@@ -5,21 +5,20 @@ Great to use for sliders or image galleries.
 
 ## Parameters
 
-* itemHtml (required)
-* htmlElement
-* width
-* height
-* placeholderHeight
-* aspectRatio (float) - Lock aspect ratio.
-* linkToImage (boolean) - Automatically link to the source image file.
+* `html-element`
+* `width`
+* `height`
+* `placeholder-height`
+* `aspect-ratio` (float) - Lock aspect ratio.
+* `link-to-image` (boolean) - Automatically link to the source image file.
 
-### itemHtml
+### Inside the tag
 
 Variables:
 
 * `%image%` – HTML code for image with link if set.
 
-### aspectRatio
+### aspect-ratio
 
 With aspect ratio set, image size is calculated by `width × width / aspect ratio`.  
 An aspect ratio of `2` is equal to 2:1 proportion.
@@ -29,18 +28,17 @@ An aspect ratio of `2` is equal to 2:1 proportion.
 
 ```html
 <div class="flexslider">
-	{ com_imagecollection (
-		id: '{{ component_id }}',
-		description: 'Add image',
-		htmlElement: 'ul',
-		class: 'slides',
-		width: '{{ column_width }}',
-		autodetectWidth:'true',
-		height: '400',
-		crop: 'true',
-		itemHtml: '
-			<li>%image%</li>
-		'
-	) }
+    <sf-imagecollection
+        id="{{ component_id_0 }}"
+        description="Add image"
+        html-element="ul"
+        class="slides"
+        width="{{ column_width }}"
+        autodetect-width="true"
+        height="400"
+        crop="true"
+    >
+        <li>%image%</li> 
+    </sf-imagecollection>
 </div>
 ```

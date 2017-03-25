@@ -1,8 +1,10 @@
 # HTML
 
+Allow a user to insert a piece of raw HTML to the site.
+
 ```html
-{ com_html(
-	id:'{{ component_id }}', 
-	description:'HTML'
-) }
+<sf-html
+    id="{{ component_id_0 }}"
+    description="HTML"
+></sf-html>
 ```

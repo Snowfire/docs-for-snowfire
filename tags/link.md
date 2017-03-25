@@ -1,27 +1,21 @@
 # Image
 
-```xml
-{ com_link ( id:'1', description:'Link' ) }
+```html
+<sf-link id="{{ component_id_0 }}" description="Link"></sf-link>
 ```
 
-Parameters
-----------
+## Parameters
 
-* linkText - Specify a text that cannot be changed by the user.
+* link-text - Specify a text that cannot be changed by the user.
 
 
-Examples
---------
+## Examples
 
 Want to have a clickable h2 element?
 
 ```html
 <h2>
-	{ com_link ( 
-		id:'1', 
-		description:'Link', 
-		class:'button'
-	) }
+	<sf-link id="{{ component_id_0 }}" description="Link" class="button"></sf-link>
 </h2>
 ```
 
