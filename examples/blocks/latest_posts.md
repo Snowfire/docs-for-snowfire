@@ -1,15 +1,12 @@
-#Latest post
-
-### HTML
+# Latest post
 
 ```html
 <div class="latest_posts">
 	<ul>
 		{ com_keys (
-			id:'201',
-			syncId:'200',
-			description:'Latest posts',
-			htmlElement:'li',
+			id: '{{ component_id }}',
+			description: 'Latest posts',
+			htmlElement: 'li',
 			html:'
 				<a href="{{ page.url }}">{{ keys.title }}</a>
 			',
@@ -18,5 +15,4 @@
 		) }
 	</ul>
 </div>
-
 ```
