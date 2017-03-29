@@ -48,22 +48,18 @@ Automatically set width by parent element.
 
 ### Use a `<div>` with a CSS background instead of an `<img>` tag
 
-```
+```html
 <sf-image2
-	id="{{ component_id }}"
-	description="Image"
-	width="1920"
-	height="500"
-	description="Image"
-	auto-width="true"
-	dimensions="min-max"
-	key="image"
-	html="
-		{% if link %}<a href='{{ link }}'>{% end_if %}
-			<div {{ attributes_html | html_decode }} style='background-image:url({{ src }})'></div>
-		{% if link %}</a>{% end_if %}
-	"
-></sf-image2>
+    id="{{ component_id }}"
+    description="Image"
+    width="200"
+    height="100"
+    dimensions="min-max"
+>
+    {% if link %}<a href="{{ link }}">{% end_if %}
+        <div {{ attributes_html | html_decode }} style="background-image:url({{ src }});height: 100px; width: 200px; background: lightblue"></div>
+    {% if link %}</a>{% end_if %}
+</sf-image2>
 ```
 
 ### Crop image
