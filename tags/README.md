@@ -16,7 +16,7 @@ If you use a Snowfire tag in a template file, you need to specify them by yourse
 <sf-image2 id="1" description="Image" width="400"></sf-image2>
 ```
 
-# Sync block content across pages
+## Sync block content across pages
 
 If you are creating a footer partial with tags you can use sync-id on your tags. This will make sure the content sync across all pages where this tag is, example:
 
@@ -24,4 +24,4 @@ If you are creating a footer partial with tags you can use sync-id on your tags.
 <sf-wysiwyg id="100" description="Text" sync-id="100"></sf-wysiwyg>
 ```
 
-We recommend using the same `id` and `sync-id` but this is only a recommendation. If you want to know which sync ids are available, use the DEV-dropdown.
+We recommend using the same `id` and `sync-id` but this is only a recommendation. If you want to know which sync ids is available, use the DEV-dropdown.
