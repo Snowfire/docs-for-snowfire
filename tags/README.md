@@ -24,4 +24,4 @@ If you are creating a footer partial with tags you can use sync-id on your tags.
 <sf-wysiwyg id="100" description="Text" sync-id="100"></sf-wysiwyg>
 ```
 
-We recommend using the same `id` and `sync-id` but this is only a recommendation. If you want to know which sync ids is available, use the DEV-dropdown.
+We recommend using the same `id` and `sync-id` but this is only a recommendation. If you want to know which sync ids are available, use the DEV-dropdown.
