@@ -12,7 +12,7 @@ Add a Facebook feed or like button to the page.
     width="{{ column_width }}"
 >
 	<div class="status %type%">
-		%photo_large%
+		%photo%
 		<p>%status% %link_with_ndash%</p>
 		<div class="actions">
 		    <div class="interaction">
