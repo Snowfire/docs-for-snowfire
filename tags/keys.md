@@ -12,25 +12,24 @@ Liquid syntax is used in the `html` parameter. Some variables set by Snowfire an
 
 In the example below `{{ page.url }}`, `{{ page.name }}` and `{{ page.publishDate }}` are Snowfire variables, while `{{ keys.body }}` is a key.
 
-```
-{ com_keys ( 
-    id:'1', 
-    description:'Bloglist',
-    html:'<h1><a href="{{ page.url }}">{{ page.name }}</a></h1><h2>{{ page.publishDate }}</h2>{{ keys.body }}',
-    sortBy:'publishedDate descending'
-) }
+```html
+<sf-keys
+	id="1"
+	description="Posts"
+	sort-by="publishedDate descending"
+>
+	<h1><a href="{{ page.url }}">{{ page.name }}</a></h1>
+	<h2>{{ page.publishDate }}</h2>
+	{{ keys.body }}
+</sf-keys>
 ```
 
 ## Blogpost.tpl
 
 In this example, this is the page layout from where the keys are pulled. **Please note** that keys cannot be used on components in repeaters.
 
-```
-{ com_wysiwyg ( 
-    id:'1', 
-    description:'Body',
-    key:'body' 
-) }
+```html
+<sf-wysiwyg id="1" description="Body" key="body"></sf-wysiwyg>
 ```
 
 Make sure you open pages created with blogpost.tpl, click the Live edit component and hit Save after you've added the key parameter to an existing component, to generate the key.
@@ -206,41 +205,33 @@ Uses Liquid syntax.
 
 ### Example with pagination
 
-```
-{ com_keys ( id:'2', description:'Keys', sortBy:'publishedDate descending', perPage:'2', paginationHtml:'
+```html
+<sf-keys
+	id="2"
+	description="Posts"
+	sort-by="publishedDate descending"
+	per-page="2"
+	pagination-html="
+		{% if previous %}
+			<a href={{ previous.url }}>&larr; Go to page {{ previous.page }}</a>
+		{% else %}
+			[This is the first page]
+		{% endif %}
+	 
+		Page {{ pageNumber }} of {{ totalPages }}
+	 
+		{% if next %}
+			<a href={{ next.url }}>Go to page {{ next.page }} &rarr;</a>
+		{% else %}
+			[This is the last page]
+		{% endif %}
+	"
+>
+	Url: <a href="{{ page.url }}">{{ page.url }}</a>
  
-	{% if previous %}
-		<a href="{{ previous.url }}">&larr; Go to page {{ previous.page }}</a>
-	{% else %}
-		[This is the first page]
-	{% endif %}
- 
-	Page {{ pageNumber }} of {{ totalPages }}
- 
-	{% if next %}
-		<a href="{{ next.url }}">Go to page {{ next.page }} &rarr;</a>
-	{% else %}
-		[This is the last page]
-	{% endif %}
- 
-', html:'
- 
-	<pre>
- 
-Url: <a href="{{ page.url }}">{{ page.url }}</a>
- 
-{{ keys.heading }}
-==================
- 
-{{ keys.body | truncatewords:5 }}
-{{ keys.body | truncatewords:10 }}
-{{ keys.body | truncatewords:20 }}
-{{ keys.body }}
-----------------------------------
- 
-	</pre>
- 
-' ) }
+    <h2>{{ keys.heading }}</h2>
+    {{ keys.body | truncatewords:10 }}
+</sf-keys>
 ```
 
 
@@ -248,14 +239,14 @@ Url: <a href="{{ page.url }}">{{ page.url }}</a>
 
 ```
 {% if totalPages > 1 %}
-<div id="pagination">
+<div id=pagination>
  
-	<div class="pages">
+	<div class=pages>
 		{% paginate page in pages current: pageNumber limit: 10 %}
 			{% if page == pageNumber %}
 				<span>{{ page }}</span>
 			{% else %}
-				<a href="{{ page | pageNumberToUrl }}">{{ page }}</a>
+				<a href={{ page | pageNumberToUrl }}>{{ page }}</a>
 			{% endif %}
  
 		{% endpaginate %}
