@@ -26,25 +26,6 @@ It is up to you if you want to allow anyone to register, or if it is only admini
 	id: '{{ component_id }}',
 	description: 'Membership',
 	selectablePage: 'false',
-	flake: 'members/session',
-	debug: 'false',
-	code: '
-		{% if loggedIn %}
-			<a href="{{ flake.public_url }}/members/logout?pid={{ page.id }}">Sign out</a>
-		{% else %}
-			<a href="{{ flake.public_url }}/members/login?pid={{ page.id }}">Sign in</a>
-		{% end_if %}
-  '
-)}
-```
-
-### Show signed in information
-
-```
-{ com_liquid2 (
-	id: '{{ component_id }}',
-	description: 'Membership',
-	selectablePage: 'false',
 	flake: 'members/person',
 	debug: 'false',
 	code: '
@@ -52,7 +33,7 @@ It is up to you if you want to allow anyone to register, or if it is only admini
 			Logged in as {{ first_name }} {{ last_name }}   |   
   			<a href="{{ flake.public_url }}/members/logout?pid={{ page.id }}">Sign out</a>
 		{% else %}
-		    You are not signed in
+		    You are not signed in. <a href="{{ flake.public_url }}/members/login?pid={{ page.id }}">Sign in</a>
 		{% end_if %}
 
 	'
