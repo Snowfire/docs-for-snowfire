@@ -5,6 +5,7 @@ Identify your header selector. On inspire it is `.top-menu-wrapper` and add the 
     position: fixed;
     width: 100%;
     z-index: 9999;
+    top: 0;
 }
 ```
 
@@ -12,7 +13,7 @@ Add a margin to the body element since the header is no longer a part of the DOM
 
 ```css
 body {
-  margin-top: 60px;
+    margin-top: 60px;
 }
 ```
 
