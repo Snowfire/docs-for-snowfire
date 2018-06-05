@@ -11,11 +11,11 @@ Add the following JavaScript to the code editor
 // Build HTML
 var languageBar = $('<div id="change-lang">');
 
-var swedish = $('<a>').attr('href', 'http://snowfire.se').attr('title', 'På svenska');
-var english = $('<a>').attr('href', 'http://snowfire.net').attr('title', 'In english');
+var swedish = $('<a>').attr('href', 'https://www.snowfire.se').attr('title', 'På svenska');
+var english = $('<a>').attr('href', 'https://snowfire.net').attr('title', 'In english');
 
-swedish.append($('<img>').attr('src', 'http://d29ly7uq16xz5t.cloudfront.net/images/flags/se_50_v1.png'));
-english.append($('<img>').attr('src', 'http://d29ly7uq16xz5t.cloudfront.net/images/flags/gb_50_v1.png'));
+swedish.append($('<img>').attr('src', 'https://d29ly7uq16xz5t.cloudfront.net/images/flags/se_50_v1.png'));
+english.append($('<img>').attr('src', 'https://d29ly7uq16xz5t.cloudfront.net/images/flags/gb_50_v1.png'));
 
 languageBar.append(swedish).append(english);
 
