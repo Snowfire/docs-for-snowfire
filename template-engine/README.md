@@ -6,7 +6,7 @@ The template engine is our way to give you even more power to create exactly the
 
 ```html
 <ul>
-    [% for tag in tags('limit: 5') %]
+    [% for tag in childrenTags('limit: 5') %]
         <li>
         	[[ tag.name ]]
         </li>
