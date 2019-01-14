@@ -21,7 +21,7 @@ This code retrieves 5 tags from the database and displays them in a ul/li list. 
 Snowfire template engine is based on [Twig](http://twig.sensiolabs.org/) and you can apply basic filters like: `[[ tag.name | upper ]]` to make the tag name in upper case. You could also do something like this:
 
 ```html
-[% for tag in tags('limit: 5') %]
+[% for tag in childrenTags('limit: 5') %]
 	<div>
 		[% if (tag.name == 'special') %]
 			<div>This tag is special</div>
