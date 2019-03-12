@@ -7,6 +7,7 @@ Each parameter is key:value, multiple parameters are separated with |
 * `limit` - Limit the amount of events fetched. Defaults to `50`. You are not allowed to fetch more than that.
 * `pagination` - true/false (if you want to paginate the result. Works great with `limit`)
 * `type` - `ALL/TICKET/COURSE/INFORMATION` (which type of events, defaults to `ALL`). Combinations allowed with comma, i.e. `TICKET,INFORMATION` will return all events with either type ticket or information.
+* `category_id` - Only include events from a specific category
 * `currentPageEvent` - `skip` / `include` (don't include the event you are currently viewing)
 * `starts_before`  - `now` (if you want to fetch events that has already started)
 * `starts_after`  - `now` (if you want to fetch events that has a future start date)
