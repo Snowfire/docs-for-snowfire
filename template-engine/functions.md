@@ -101,6 +101,38 @@ Example
 
 ---
 
+### getDataFromUrl
+
+Get data from a REST API URL:
+
+`[% set cars = getDataFromUrl('url: http://example.com/cars') %]`
+
+Lets say your response payload looks like this:
+
+```json
+{
+	"cars": [
+		{
+			"name": "Volvo"
+		}
+		{
+			"name": "Saab"
+		}
+	]
+}
+```
+
+Then it is possible to loop it trough like this:
+
+```html
+<ul>
+	[% for car in cars %]
+		<li>[[ car.name ]]
+	[% endfor %]
+</ul>
+```
+
+
 ### getFormUrl()
 
 Used to get "action" name for the form that uses a remote api and storing that response data in the cache
@@ -133,15 +165,14 @@ Example:
       "car":[  
         {  
           "id":"25",
-          "klass":"person",
-          "korkort":"B"
+          "name":"Volvo",
         }
       ]
     },
     {  
-      "rent":{  
-        "Id":"3",
-        "Grupp":"B"
+      "info":{  
+        "id":"3",
+        "group":"B"
       }
     }
   ]
@@ -153,13 +184,11 @@ Example access:
 [% set data = getDataFromCache() %]
 
 <!-- Display the id of the car from example -->
-[[ data.cars.car.id ]]
+[[ data.cars.car.name ]]
 
 <!-- Display the group of the rent from example -->
-[[ data.cars.rent.Grupp ]]
+[[ data.cars.info.group ]]
 ```
-
----
 
 
 
