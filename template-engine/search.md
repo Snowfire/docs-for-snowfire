@@ -21,7 +21,7 @@ This is an example for building site search on Snowfire
     </div>
 [% endif %]
 
-[% if (result.hits == 0) %]
+[% if (result.hits == 0 and request('get: q') != '') %]
     <div class="sf-search-results-no-match">
         No results found for <strong>[[ request('get: q') ]]</strong>
     </div>
