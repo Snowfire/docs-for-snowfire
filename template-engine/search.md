@@ -17,7 +17,13 @@ This is an example for building site search on Snowfire
 
 [% if (result.status == 'error') %]
     <div class="sf-search-results-error">
-        There was a problem with this search, please try again later
+        There was a problem with this search, please try later.
+    </div>
+[% endif %]
+
+[% if (result.hits == 0) %]
+    <div class="sf-search-results-no-match">
+        No results found for <strong>[[ request('get: q') ]]</strong>
     </div>
 [% endif %]
 
