@@ -23,7 +23,8 @@ languageBar.append(swedish).append(english);
 languageBar.css({
    'position' : 'absolute',
    'top' : '3px',
-   'right' : '15px'
+   'right' : '15px',
+   'z-index' : '9999'
 });
 
 languageBar.find('img').css({
