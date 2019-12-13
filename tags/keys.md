@@ -78,6 +78,12 @@ Set it to "page" to enable more flexible keys (specific pages or tags)
 
 Get access to all tags that belongs to a page. With this set to true you can have the following code inside the `html` parameter:
 
+### `tag`
+
+Makes it possible to dynamically filter a keys collection with a GET parameter. 
+You can set the value to either `current` or `notCurrent` to only show pages tagged with the current tag.
+The current tag is set by appending `?tag=X` to the URL.
+
 ```
 <ul>
 	{% for tag in page.tags %}
