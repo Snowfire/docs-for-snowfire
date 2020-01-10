@@ -1,7 +1,7 @@
 # Keys
 
 Keys are made for doing things such as blogs where you need to automatically link pages to a list. Keys are set on components with the parameter `key`. A key could be thought of as a name for that component.
-
+po
 In `com_keys`, either the user selects some pages, or they are set for them with parameters. From these pages keys are extracted, and used to present some form of list. This could be used to pull a headline (singlerow) and the lead paragraph (wysiwyg) to a blog post list.
 
 ## Bloglist.tpl
@@ -81,6 +81,12 @@ Set it to "page" to enable more flexible keys (specific pages or tags)
 	{% endfor %}
 </ul>
 ```
+
+### `tag`
+
+Makes it possible to dynamically filter a keys collection with a GET parameter. 
+You can set the value to either `current` or `notCurrent` to only show pages tagged with the current tag.
+The current tag is set by appending `?tag=X` to the URL.
 
 ### `enableTags`
 
