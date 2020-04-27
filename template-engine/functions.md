@@ -3,7 +3,7 @@
 Functions allow you to get data from the database. Example:
 
 ```
-[% for tag in tags('limit: 5') %]
+[% for tag in page.tags('limit: 5') %]
     <div>
     	[[ tag.name ]]
     </div>
